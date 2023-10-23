@@ -9,11 +9,12 @@
     z-index: 22;
     position: relative;
     background-color: var(--bg-color-primary);
-    transition: opacity 1s ease-in-out;
+    
     .title{
         margin-top: 150px;
         z-index: 5;
         opacity: 0;
+        transition: opacity 1s ease-in-out;
         h1{
             color: white;
             margin-left: 72px;
@@ -45,6 +46,7 @@
         opacity: 0;
         height: 100%;
         margin-top: -80px;
+        transition: opacity 1s ease-in-out;
     }
 }
 

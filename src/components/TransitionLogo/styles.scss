@@ -4,9 +4,14 @@
     height: 110vh;
     position: relative;
 
-    .scaling-img {
+    .scaling-img-1 {
         transform-origin: center center;
         transition: transform 1s ease-in-out;
+    }
+
+    .scaling-img-2 {
+        transform-origin: center center;
+        transition: transform 1.5s ease-in-out;
     }
 
     .transition-background {

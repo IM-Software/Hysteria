@@ -17,7 +17,7 @@ export const TransitionLogo = ({ id, data }) => {
         })
 
         gsap.to(`#transition-img-${id}`, {
-            className: 'transition-img scaling-img',
+            className: `transition-img scaling-img-${id}`,
             scale: 1.2,
             filter: 'brightness(0.7) sepia(1) hue-rotate(306deg) saturate(6)',
             ease: 'power1.easeInOut',
