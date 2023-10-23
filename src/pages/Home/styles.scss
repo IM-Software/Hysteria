@@ -1,0 +1,55 @@
+.home {
+    .titles{
+        font-size: 252px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .paragraphs{
+        font-family: var(--font-secondary);
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 47px;
+        letter-spacing: 1.32px;
+    }
+    .loading{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        .spinner{
+            margin-top: 20px;
+        }
+    }
+}
+
+.modal{
+    h2{
+        font-weight: 700;
+        font-size: 32px;
+    }
+}
+@media(max-width: 1600px){
+    .home {
+        .titles{
+            font-size: 216px;
+        }
+        .paragraphs{
+            line-height: 30px;
+        }
+    }
+}
+@media(max-width: 1400px) and (max-height: 900px){
+    .home {
+        .titles{
+            font-size: 152px;
+        }
+        .paragraphs{
+            line-height: 30px;
+        }
+    }
+}

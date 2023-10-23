@@ -1,0 +1,277 @@
+.brandlab {
+    width: 100vw;
+    height: 150vh;
+    display: flex;
+    overflow: hidden;
+    background-color: var(--bg-color-primary);
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    align-items: center;
+    pointer-events: none;
+
+
+    .brandlab-circle {
+        display: none;
+        background-color: var(--bg-color-four);
+        scale: 0.05;
+        border-radius: 100%;
+        width: 1849px;
+        height: 1849px;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        margin-top: -60vh;
+        transition: transform ease-in-out;
+    }
+
+    #brandlab {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        margin-top: -60vh;
+        pointer-events: none;
+    }
+
+    .front {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -50vh;
+
+        .texts {
+            z-index: 50;
+            position: absolute;
+            margin-right: 42vw;
+            margin-left: 10px;
+            margin-top: 100px;
+            color: white;
+            min-height: 548px;
+
+            h2{
+                opacity: 0;
+                &.show{
+                    animation: move-title-brand 1.5s ease-in-out forwards;
+                }
+            }
+
+            h3 {
+                margin-top: 30px;
+                font-family: var(--font-secondary);
+                font-weight: 700;
+                font-size: 25px;
+                line-height: 39px;
+                max-width: 709px;
+                opacity: 0;
+                &.show{
+                    opacity: 1;
+                    animation: move-brand-paragraph 1.2s ease-out;
+                }
+            }
+
+            p {
+                max-width: 900px;
+                margin-right: 50px;
+                opacity: 0;
+                &.show{
+                    opacity: 1;
+                    animation: move-brand-paragraph 1.2s ease-out;
+                }
+            }
+
+            .brands{
+                margin-top: 37px;
+                display: flex;
+                position: absolute;
+                gap: 20px;
+
+                .brand{
+                    display: none;
+                    max-width: 150px;
+                    max-height: 100px;
+                    animation: move-sub 1.3s ease-out;
+
+                    &.show{
+                        display: flex;
+                    }
+
+                    img{
+                        max-width: 100%;
+                        max-height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+            }
+        }
+
+        .brandlab-video {
+            width: 886px;
+            height: 886px;
+            position: absolute;
+            margin-top: 5vh;
+            margin-left: 50vw;
+            z-index: 3;
+
+            .video-circle-top {
+                display: flex;
+                width: 1242.7px;
+                height: 1242.7px;
+                border-radius: 100%;
+                border: 1px solid var(--bg-color-four);
+                z-index: 1;
+                position: absolute;
+                top: -35vh;
+                box-shadow: 0px 3.2260401248931885px 75.81194305419922px 8.065099716186523px rgba(0, 0, 0, 0.50);
+                animation: decrease 1s ease-in-out forwards;
+            }
+
+            .video-circle {
+                display: flex;
+                width: 892px;
+                height: 892px;
+                border-radius: 100%;
+                border: 1px solid var(--bg-color-four);
+                z-index: 1;
+                position: absolute;
+                margin-left: -5%;
+                box-shadow: 0px 3.2260401248931885px 75.81194305419922px 8.065099716186523px rgba(0, 0, 0, 0.50);
+                animation: decrease 1s ease-in-out forwards;
+            }
+
+            video {
+                width: 100%;
+                height: 100%;
+                border-radius: 100%;
+                object-fit: cover;
+                object-position: center;
+                z-index: 0;
+                animation: move-paragraph 1s ease-in-out;
+            }
+        }
+    }
+}
+
+@keyframes decrease {
+    from {
+        transform: scale(3);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes move-title-brand {
+    from {
+        opacity: 0;
+        transform: translateY(300px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes move-brand-paragraph {
+    from {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes move-sub {
+    from {
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+
+@media(max-width: 1600px){
+    .brandlab{
+        .brandlab-circle{
+            width: 1500px;
+            height: 1500px;
+        }
+        .front{
+            .texts{
+                margin-right: 35vw;
+            }
+            .brandlab-video {
+                width: 786px;
+                height: 786px;
+                .video-circle-top {
+                    width: 1000px;
+                    height: 1000px;
+                }
+                .video-circle {
+                    width: 792px;
+                    height: 792px;
+                }
+            }
+        }
+    }
+}
+@media(max-width: 1480px){
+    .brandlab{
+        .front{
+            .texts{
+                margin-right: 25vw;
+            }
+        }
+    }
+}
+@media (max-width: 1400px) and (max-height: 940px){
+    .brandlab{
+        .brandlab-circle{
+            margin-top: 20vh;
+            width: 1300px;
+            height: 1300px;
+        }
+        .front{
+            margin-bottom: -5vh;
+            .texts{
+                margin-right: 23vw;
+            }
+            .brandlab-video {
+                width: 600px;
+                height: 600px;
+                .video-circle-top {
+                    top: -15vh;
+                    width: 670px;
+                    height: 670px;
+                }
+                .video-circle {
+                    width: 612px;
+                    height: 612px;
+                }
+            }
+        }
+    }
+}

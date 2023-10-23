@@ -1,0 +1,40 @@
+.transition-logo {
+    z-index: 100;
+    width: 100%;
+    height: 110vh;
+    position: relative;
+
+    .scaling-img {
+        transform-origin: center center;
+        transition: transform 1s ease-in-out;
+    }
+
+    .transition-background {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+
+        .transition-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.2s ease-out;
+        }
+    }
+
+    .logo {
+        z-index: 1;
+        width: 100%;
+        height: 150%;
+        opacity: 0.5;
+        position: absolute;
+        top: 60vh;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
