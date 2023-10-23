@@ -197,6 +197,51 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                                     end: '+=250%',
                                     scrub: 0.5,
                                 },
+                                onComplete: () =>{
+                                    gsap.to('.circle-top', {
+                                        visibility: 'hidden',
+                                        y: '-200vh',
+                                        x: '-36.2vw',
+                                        position: 'fixed',
+                                        width: `calc(${circleTop.current.offsetWidth}px - 881px)`,
+                                        height: `calc(${circleTop.current.offsetWidth}px - 881px)`,
+                                        border: '0.761px solid var(--bg-color-four)',
+                                        transition: 'transform 1s ease-out',
+                                        scrollTrigger: {
+                                            trigger: '.brandlab',
+                                            start: "top center",
+                                            end: 'top center',
+                                            scrub: 0.5,
+                                            markers: true,
+                                        },
+                                        onComplete: () =>{
+                                            gsap.to('.circle-top', {
+                                                visibility: 'visible',
+                                                y: '50vh',
+                                                x: '-36.2vw',
+                                                scrollTrigger: {
+                                                    trigger: '.brandlab',
+                                                    start: "center center",
+                                                    end: 'center center',
+                                                    scrub: 0.5,
+                                                    markers: true
+                                                },
+                                                onComplete: () =>{
+                                                    gsap.to('.circle-top', {
+                                                        display: 'none',
+                                                        scrollTrigger: {
+                                                            trigger: '#transition-logo-2',
+                                                            start: "top top",
+                                                            end: 'top top',
+                                                            scrub: 0.5,
+                                                            markers: true
+                                                        },
+                                                    })
+                                                }
+                                            })
+                                        }
+                                    })
+                                }
                             })
                         }
                     })
@@ -235,6 +280,51 @@ export const Initial = ({ showScroll, data, setShowSecondPart, setShowHeader }) 
                                     end: '+=200%',
                                     scrub: 0.5,
                                 },
+                                onComplete: () =>{
+                                    gsap.to('.circle-bottom', {
+                                        visibility: 'hidden',
+                                        y: '-200vh',
+                                        x: '92.7vw',
+                                        position: 'fixed',
+                                        width: `calc(${circleBottom.current.offsetWidth}px - 1181px)`,
+                                        height: `calc(${circleBottom.current.offsetWidth}px - 1181px)`,
+                                        border: '1px solid var(--bg-color-four)',
+                                        transition: 'transform 1s ease-out',
+                                        scrollTrigger: {
+                                            trigger: '.brandlab',
+                                            start: "top center",
+                                            end: 'top center',
+                                            scrub: 0.5,
+                                            markers: true,
+                                        },
+                                        onComplete: () =>{
+                                            gsap.to('.circle-bottom', {
+                                                visibility: 'visible',
+                                                y: '-72vh',
+                                                x: '92.7vw',
+                                                scrollTrigger: {
+                                                    trigger: '.brandlab',
+                                                    start: "center center",
+                                                    end: 'center center',
+                                                    scrub: 0.5,
+                                                    markers: true
+                                                },
+                                                onComplete: () =>{
+                                                    gsap.to('.circle-bottom', {
+                                                        display: 'none',
+                                                        scrollTrigger: {
+                                                            trigger: '#transition-logo-2',
+                                                            start: "top top",
+                                                            end: 'top top',
+                                                            scrub: 0.5,
+                                                            markers: true
+                                                        },
+                                                    })
+                                                }
+                                            })
+                                        }
+                                    })
+                                }
                             })
                         }
                     })

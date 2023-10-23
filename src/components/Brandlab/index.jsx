@@ -75,8 +75,6 @@ export const Brandlab = ({ text, brands }) => {
 
         {showVideo &&
           <div className="brandlab-video">
-            <div className='video-circle-top'></div>
-            <div className='video-circle'></div>
             <video className='video-brandlab' muted loop src={text.videoUrl}></video>
           </div>
         }

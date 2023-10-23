@@ -55,7 +55,6 @@ export const Projects = ({ showScroll, projects }) => {
   const colums = organizedProjects.map((subarray) => subarray.slice(1, subarray.length))
 
   const toggleModal = (index) => {
-    showScroll(false)
     setShowModal(!showModal)
     setSelectedProject(index)
   }

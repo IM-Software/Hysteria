@@ -23,7 +23,6 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
         if (!disabledButton) {
             if (!showVideo) {
                 toggleModal(false)
-                showScroll(true)
                 setShowContent(showModal)
             } else {
                 setDisabledButton(true)
@@ -180,6 +179,10 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
                         <Swiper
                             slidesPerView={2}
                             className="outher-projects"
+                            navigation={{
+                                nextEl: '.right-arrow',
+                                prevEl: '.arrow-left',
+                            }}
                         >
                             {projects.map((project, indexProject) => {
                                 if (indexProject !== indexCurrent) {

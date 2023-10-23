@@ -17,36 +17,24 @@ export const Collaborators = ({ text }) => {
                 scrub: 0.5,
             },
             onComplete: () => {
-                gsap.to('.brand-background', {
-                    y: '110vh',
-                    ease: 'power1.easeInOut',
-                    scrollTrigger: {
-                        trigger: '.collaborators-text',
-                        start: "bottom bottom",
-                        end: '+=100%',
-                        scrub: 1,
-                    },
-                })
                 gsap.to('.bigger-circle', {
-                    y: '0vh',
+                    y: '110vh',
                     x: '-30vw',
-                    ease: 'power1.easeInOut',
                     scrollTrigger: {
                         trigger: '.collaborators-text',
                         start: "bottom bottom",
                         end: '+=100%',
-                        scrub: 1,
+                        scrub: 0.5,
                     },
                 })
                 gsap.to('.smaller-circle', {
                     x: '8vw',
                     y: '-60vh',
-                    ease: 'power1.easeInOut',
                     scrollTrigger: {
                         trigger: '.collaborators-text',
                         start: "bottom bottom",
                         end: '+=100%',
-                        scrub: 1,
+                        scrub: 0.5,
                     },
                 })
                 gsap.to('.background-blur', {
@@ -81,19 +69,12 @@ export const Collaborators = ({ text }) => {
             },
             onComplete: () => {
                 setShowTitle(true)
+                setTimeout(() => {
+                    setShowText(true)
+                }, 500)
             }
         })
-        gsap.to('.collaborators-text', {
-            scrollTrigger: {
-                trigger: '#transition-img-2',
-                start: "center center",
-                end: '+=60%',
-                scrub: 1,
-            },
-            onComplete: () =>{
-                setShowText(true)
-            }
-        })
+
     }, [])
 
     return (
