@@ -9,6 +9,7 @@
     position: sticky;
     top: 0;
     z-index: 20;
+    padding-bottom: 15vh;
 
     .about-container {
         width: 100%;
@@ -38,15 +39,16 @@
 
             h2 {
                 animation: move-left 1.5s ease-in-out forwards;
-                margin-top: -50px;
+                margin-top: -40px;
+                margin-left: -90px;
             }
 
             h3 {
-                font-size: 210px;
+                font-size: 200px;
                 font-style: normal;
                 font-weight: 400;
                 line-height: normal;
-                margin-left: -183px;
+                margin-left: -284px;
                 animation: move-right 1.5s ease-in-out forwards;
             }
         }
@@ -106,6 +108,13 @@
     }
 }
 
+#about {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+}
+
 @keyframes fade-about {
     from {
         opacity: 0;
@@ -148,6 +157,81 @@
     }
 }
 
+@media (min-width: 3000px) and (max-width: 4000px) {
+    .about {
+        .about-container {
+            .about-text {
+                margin-left: 430px;
+
+                .about-title {
+                    h2 {
+                        margin-left: 710px;
+                    }
+
+                    h3 {
+                        margin-left: 346px;
+                        font-size: 392px;
+                    }
+                }
+
+                .paragraph {
+                    width: 2000px;
+                    margin-left: 1300px;
+
+                    p {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .footer {
+                font-size: 72px;
+                margin-left: 22.5%;
+
+                a {
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 2000px) and (max-width: 3000px) {
+    .about {
+        .about-container {
+
+            .about-text {
+                margin-left: 430px;
+
+                .about-title {
+                    flex-direction: column;
+                    color: var(--color-text-third);
+
+                    h2 {
+                        margin-left: -40px;
+                    }
+
+                    h3 {
+                        font-size: 264px;
+                        margin-left: -300px;
+                    }
+                }
+
+                .paragraph {
+                    margin-top: -20px;
+                    margin-left: 150px;
+                }
+            }
+
+            .footer {
+                font-size: 28px;
+                margin-top: 40px;
+                margin-left: 15%;
+            }
+        }
+    }
+}
+
 
 @media(max-width: 1600px) {
     .about {
@@ -156,13 +240,17 @@
 
             .about-title {
                 h3 {
-                    font-size: 184px;
-                    margin-left: -180px;
+                    font-size: 164px;
+                    margin-left: -150px;
                 }
 
                 h2 {
-                    margin-top: -50px;
+                    margin-left: 6px;
+                    margin-top: -30px;
                 }
+            }
+            .paragraph{
+                margin-top: 10px;
             }
         }
 
@@ -172,25 +260,108 @@
     }
 }
 
-@media(max-width: 1399px) {
+@media(max-width: 1200px) {
     .about {
         .about-text {
-            margin-top: 0%;
+            .paragraph {
+                width: 500px;
+                margin-left: 160px;
+            }
+        }
+    }
+}
 
+@media(max-width: 1440px) {
+    .about {
+        .about-text {
+            margin-top: -2%;
             .about-title {
                 h3 {
-                    font-size: 146px;
-                    margin-left: -140px;
+                    font-size: 140px;
+                    margin-left: -22px;
                 }
 
                 h2 {
                     margin-top: -30px;
+                    margin-left: 120px;
+                }
+            }
+
+            .paragraph {
+                .paragraphs {
+                    font-size: 21px;
                 }
             }
         }
 
         .footer {
             margin-top: 50px;
+            font-size: 16px;
+            margin-left: 14.35%;
+        }
+    }
+}
+
+@media(max-width: 1399px) {
+    .about {
+        .about-text {
+            margin-top: -2%;
+
+            .about-title {
+                h3 {
+                    font-size: 140px;
+                    margin-left: -132px;
+                }
+
+                h2 {
+                    margin-top: -30px;
+                    margin-left: 10px;
+                }
+            }
+
+            .paragraph {
+                .paragraphs {
+                    font-size: 21px;
+                }
+            }
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 16px;
+            margin-left: 14.35%;
+        }
+    }
+}
+
+@media(max-width: 1280px) {
+    .about {
+        .about-text {
+            margin-top: -2%;
+
+            .about-title {
+                margin-left: 34px;
+                h3 {
+                    margin-left: -170px;
+                }
+
+                h2 {
+                    margin-top: -30px;
+                    margin-left: -20px;
+                }
+            }
+
+            .paragraph {
+                .paragraphs {
+                    font-size: 21px;
+                }
+            }
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 16px;
+            margin-left: 14.35%;
         }
     }
 }

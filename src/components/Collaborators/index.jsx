@@ -8,8 +8,9 @@ export const Collaborators = ({ text }) => {
 
     useEffect(() => {
         gsap.to('.bigger-circle', {
-            y: '+=50vh',
-            x: '+=20vw',
+            y: '0vh',
+            x: '0vw',
+            visibility: 'visible',
             scrollTrigger: {
                 trigger: '#transition-img-2',
                 start: "center center",
@@ -18,7 +19,7 @@ export const Collaborators = ({ text }) => {
             },
             onComplete: () => {
                 gsap.to('.bigger-circle', {
-                    y: '110vh',
+                    y: '112vh',
                     x: '-30vw',
                     scrollTrigger: {
                         trigger: '.collaborators-text',
@@ -27,9 +28,21 @@ export const Collaborators = ({ text }) => {
                         scrub: 0.5,
                     },
                 })
+            }
+        })
+        gsap.to('.smaller-circle', {
+            y: '0vh',
+            x: '0vw',
+            scrollTrigger: {
+                trigger: '#transition-img-2',
+                start: "center center",
+                end: '+=110%',
+                scrub: 0.5,
+            },
+            onComplete: () => {
                 gsap.to('.smaller-circle', {
-                    x: '8vw',
-                    y: '-60vh',
+                    x: '8.51vw',
+                    y: '-79.3958%',
                     scrollTrigger: {
                         trigger: '.collaborators-text',
                         start: "bottom bottom",
@@ -49,22 +62,12 @@ export const Collaborators = ({ text }) => {
                 })
             }
         })
-        gsap.to('.smaller-circle', {
-            y: '+=40vh',
-            x: '+=20vw',
-            scrollTrigger: {
-                trigger: '#transition-img-2',
-                start: "center center",
-                end: '+=110%',
-                scrub: 0.5,
-            },
-        })
 
         gsap.to('.collaborators', {
             scrollTrigger: {
                 trigger: '#transition-img-2',
                 start: "center center",
-                end: '+=40%',
+                end: '+=30%',
                 scrub: 1,
             },
             onComplete: () => {
@@ -85,23 +88,21 @@ export const Collaborators = ({ text }) => {
                         <h2 className='titles'>colaboradoras</h2>
                     </div>
                 }
-                {showText &&
-                    <div className="collaborators-text">
-                        <div className="sub-title">
-                            <div className='circles-images'>
-                                <div className="up" style={{ backgroundImage: `url(${text.imageTop.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
-                                </div>
-                                <div className="left" style={{ backgroundImage: `url(${text.imageLeft.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}></div>
-                                <div className="low" style={{ backgroundImage: `url(${text.imageLow.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}></div>
+                <div className="collaborators-text">
+                    <div className="sub-title">
+                        <div className='circles-images'>
+                            <div className={`up ${showText ? 'show' : ''}`} style={{ backgroundImage: `url(${text.imageTop.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
                             </div>
-                            <div className="paragraph">
-                                <p>{text.text}</p>
-                            </div>
+                            <div className={`left ${showText ? 'show' : ''}`} style={{ backgroundImage: `url(${text.imageLeft.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}></div>
+                            <div className={`low ${showText ? 'show' : ''}`} style={{ backgroundImage: `url(${text.imageLow.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}></div>
+                        </div>
+                        <div className='paragraph'>
+                            <p className={`${showText ? 'show' : ''}`}>{text.text}</p>
                         </div>
                     </div>
-                }
+                </div>
             </div>
-            <div className="brand-background">
+            <div className="collaborators-background">
                 <div className='bigger-circle'>
                     <div className="smaller-circle">
                         <div className='background-blur'></div>

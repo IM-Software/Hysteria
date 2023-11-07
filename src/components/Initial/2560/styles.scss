@@ -29,7 +29,12 @@
         }
     }
 
-
+    #animation-start{
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        margin-top: 60vh;
+    }
 
     .video {
         width: 100%;
@@ -113,12 +118,12 @@
             height: 1156px;
             border-radius: 100%;
             overflow: hidden;
-            border: 2px solid white;
+            border: 1px solid white;
             box-shadow: 0px 4px 94px 0px rgba(0, 0, 0, 0.25);
         }
     }
 
-    .text-container {
+    .text-container-one {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -126,6 +131,17 @@
         width: 100%;
         height: 100px;
         overflow: hidden;
+    }
+
+    .text-container-two {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        height: 100px;
+        overflow: hidden;
+        margin-top: -40px;
     }
 
     .text-container-center {
@@ -171,8 +187,8 @@
         }
     }
 
-    .circle-top,
-    .circle-bottom {
+    .circle-top-2560,
+    .circle-bottom-2560{
         position: absolute;
         z-index: 7;
         width: 1156px;
@@ -181,15 +197,23 @@
         border: 1px solid #FFF;
         box-shadow: 0px 4px 94px 0px rgba(0, 0, 0, 0.568);
         pointer-events: none;
+        opacity: 1;
+        animation: fade 0.6s ease-in;
     }
 
-    .circle-top {
+    .circle-top-2560 {
         top: 0%;
         left: 108%;
         transform: translate(-50%, -50%);
+
+        &.sticky{
+            top: 0;
+            transform: translate(-50%, -50%) translate(-36.2vw, 60vh) !important;
+            position: fixed !important;
+        }
     }
 
-    .circle-bottom {
+    .circle-bottom-2560{
         top: 107%;
         left: -6%;
         transform: translate(-50%, -50%);
@@ -206,6 +230,101 @@
     }
 }
 
+@media (min-width: 3000px) {
+    .start {
+
+        .animation {
+            .ball {
+                width: 5000px;
+                height: 5000px;
+            }
+            .logo{
+                scale: 3;
+            }
+        }
+
+        .center {
+            .circle {
+                width: 2467px;
+                height: 2467px ;
+            }
+        }
+
+        .circle-top-2560,
+        .circle-bottom-2560 {
+            width: 2250px;
+            height: 2250px;
+        }
+
+        .text-container-center {
+            height: 658px;
+        }
+
+        .text-container-one, .text-container-two {
+            height: 220px;
+        }
+        .text {
+            h1 {
+                font-size: 632px;
+                line-height: normal;
+                transition: transform 0.5s ease-out;
+            }
+
+            h2 {
+                font-size: 220px;
+                font-weight: 300;
+                line-height: 96px;
+                animation: fade-in 1.3s ease-in;
+            }
+
+            .text-one {
+                transition: transform 0.3s ease-out;
+            }
+
+            .text-three {
+                transition: transform 0.7s ease-out;
+            }
+        }
+    }
+}
+
+@media (min-width: 2000px) and (max-width: 3000px) {
+    .start {
+        .center {
+            .circle {
+                width: 1300px;
+                height: 1300px;
+            }
+        }
+
+        .circle-top-2560,
+        .circle-bottom-2560 {
+            width: 1550px;
+            height: 1550px;
+        }
+
+        .text-container-center {
+            height: 388px;
+        }
+
+        .text-container-one, .text-container-two {
+            height: 120px !important;
+        }
+
+        .text {
+            h1 {
+                font-size: 332px;
+                line-height: normal;
+            }
+
+            h2 {
+                font-size: 120px;
+            }
+        }
+
+    }
+}
+
 @media (max-height: 1079px) and (max-width: 1400px) {
     .start {
         .center {
@@ -215,8 +334,8 @@
             }
         }
 
-        .circle-top,
-        .circle-bottom {
+        .circle-top-2560,
+        .circle-bottom-2560 {
             width: 900px;
             height: 900px;
         }
@@ -240,8 +359,8 @@
             }
         }
 
-        .circle-top,
-        .circle-bottom {
+        .circle-top-2560,
+        .circle-bottom-2560 {
             width: 1050px;
             height: 1050px;
         }
@@ -264,8 +383,8 @@
             }
         }
 
-        .circle-top,
-        .circle-bottom {
+        .circle-top-2560,
+        .circle-bottom-2560 {
             width: 950px;
             height: 950px;
         }
@@ -288,8 +407,8 @@
             }
         }
 
-        .circle-top,
-        .circle-bottom {
+        .circle-top-2560,
+        .circle-bottom-2560 {
             width: 900px;
             height: 900px;
         }
@@ -316,10 +435,24 @@
             }
         }
 
-        .circle-top,
-        .circle-bottom {
+        .circle-top-1920,
+        .circle-bottom-1920 {
             width: 800px;
             height: 800px;
+        }
+
+        .text-container-one{
+            margin-bottom: -50px;
+        }
+        .text-container-two{
+            margin-top: -80px;
+        }
+    }
+}
+@media (max-width: 1280px){
+    .start{
+        #animation-start{
+            margin-top: 100vh;
         }
     }
 }
@@ -333,8 +466,8 @@
             }
         }
 
-        .circle-top,
-        .circle-bottom {
+        .circle-top-2560,
+        .circle-bottom-2560 {
             width: 750px;
             height: 750px;
         }
@@ -364,21 +497,21 @@
             }
         }
 
-        .circle-top,
-        .circle-bottom {
+        .circle-top-2560,
+        .circle-bottom-2560 {
             width: 850px;
             height: 850px;
             border: 0.476px solid #FFF;
 
         }
 
-        .circle-top {
+        .circle-top-2560 {
             top: -30%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
 
-        .circle-bottom {
+        .circle-bottom-2560 {
             top: 127%;
             left: 50%;
             transform: translate(-50%, -50%);

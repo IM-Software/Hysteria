@@ -17,7 +17,7 @@ export const TransitionLogo = ({ id, data }) => {
         })
 
         gsap.to(`#transition-img-${id}`, {
-            className: `transition-img scaling-img-${id}`,
+            className: `transition-img scaling-img`,
             scale: 1.2,
             filter: 'brightness(0.7) sepia(1) hue-rotate(306deg) saturate(6)',
             ease: 'power1.easeInOut',
@@ -28,17 +28,6 @@ export const TransitionLogo = ({ id, data }) => {
                 scrub: 0,
             },
         })
-
-        /*gsap.to(`#transition-img-${id}`, {
-            y: '+=15vh', 
-            scrollTrigger: {
-                trigger: `#transition-logo-${id}`,
-                start: "top center -=50vh",
-                end: '+=150%',
-                scrub: 1,
-            },
-        })*/
-
     }, [id])
 
     return (

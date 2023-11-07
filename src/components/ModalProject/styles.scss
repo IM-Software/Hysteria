@@ -8,7 +8,7 @@
     overflow-x: hidden;
     scroll-behavior: smooth;
     color: white;
-    z-index: 203;
+    z-index: 101;
     background-color: var(--bg-color-primary);
 
     .modal-header {
@@ -19,6 +19,7 @@
         width: 100%;
         position: fixed;
         transition-delay: 1000ms;
+
         div {
             padding: 20px 62px 20px 62px;
         }
@@ -167,7 +168,8 @@
                     object-fit: cover;
                     object-position: center;
                     transition: 1s ease-in;
-                    &:hover{
+
+                    &:hover {
                         scale: 1.2;
                     }
                 }
@@ -194,20 +196,22 @@
             z-index: 2;
             cursor: pointer;
             filter: drop-shadow(0px 4.383561611175537px 92.05479431152344px rgba(0, 0, 0, 0.90));
+
             &:hover {
                 img {
                     scale: 1.2;
                 }
             }
 
-            img{
+            img {
                 width: 100%;
                 height: 100%;
                 transition: 1s ease-in;
                 object-fit: cover;
                 object-position: center;
             }
-            .play{
+
+            .play {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -217,7 +221,8 @@
                 border-radius: 100%;
                 background: var(--bg-color-play);
                 opacity: 0.6;
-                svg{
+
+                svg {
                     width: 100%;
                     height: 100%;
                     margin-left: 19px;
@@ -232,17 +237,19 @@
             width: 100%;
             height: 600px;
 
-            .image{
+            .image {
                 width: 100%;
                 height: 100%;
                 overflow: hidden;
+
                 img {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
                     object-position: center;
                     transition: 1s ease-in;
-                    &:hover{
+
+                    &:hover {
                         scale: 1.2;
                     }
                 }
@@ -261,7 +268,8 @@
                 object-fit: cover;
                 object-position: center;
                 transition: 1s ease-in;
-                &:hover{
+
+                &:hover {
                     scale: 1.2;
                 }
             }
@@ -344,6 +352,10 @@
                     opacity: 1;
                 }
             }
+        }
+
+        .swiper-no-swiping {
+            touch-action: none;
         }
 
         .outher-projects {
@@ -491,6 +503,230 @@
     }
 }
 
+@media(min-width: 3000px) {
+    .modalproject {
+        h2 {
+            font-size: 244px;
+        }
+
+        .modal-header {
+            div {
+                padding: 60px 82px;
+
+                img {
+                    width: 550px;
+                }
+
+                svg {
+                    width: 70px;
+                    height: 70px;
+                }
+            }
+        }
+
+        .project-modal {
+            padding-top: 350px;
+            height: 1500px;
+
+            .project-about {
+                margin-top: 100px;
+
+                .text {
+                    margin-top: 150px;
+                    max-width: 1530px;
+                    gap: 72px;
+
+                    .stream {
+                        font-size: 72px;
+
+                        .line {
+                            margin-left: 54px;
+                            margin-right: 54px;
+                            width: 10px;
+                        }
+                    }
+
+                    .paragraph {
+                        font-size: 80px;
+                        line-height: normal;
+                    }
+
+                    .credits {
+                        gap: 72px;
+
+                        .credit {
+                            p {
+                                font-size: 56px;
+                            }
+                        }
+                    }
+                }
+
+                .image {
+                    width: 100%;
+                }
+            }
+        }
+
+        .gallery {
+            .video {
+                .play {
+                    width: 450px;
+                    height: 450px;
+                    svg{
+                        margin-left: 59px;
+                    }
+                }
+            }
+            .images {
+                height: 1200px;
+            }
+
+            .middle {
+                height: 1786px;
+            }
+        }
+
+        .footer {
+            .title {
+                margin-bottom: -40px;
+                font-size: 256px;
+
+                .arrow-container {
+                    margin-top: 130px;
+                    padding: 0px 80px;
+                    scale: 2.5;
+                }
+            }
+
+            .outher-projects {
+                height: 1000px;
+
+                .outher-project {
+                    .info {
+                        margin-top: -250px;
+
+                        h3 {
+                            font-size: 88px;
+                        }
+
+                        .text-project {
+                            p {
+                                font-size: 62px;
+                            }
+
+                            .line {
+                                margin-left: 50px;
+                                margin-right: 50px;
+                                width: 6px;
+                                height: 53px;
+                                background-color: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 2000px) and (max-width: 3000px) {
+    .modalproject {
+        h2 {
+            font-size: 144px;
+        }
+
+        .modal-header {
+            div {
+                img {
+                    width: 250px;
+                }
+
+                svg {
+                    width: 35px;
+                    height: 35px;
+                }
+            }
+        }
+
+        .project-modal {
+            .project-about {
+                .text {
+                    max-width: 930px;
+
+                    .paragraph {
+                        font-size: 32px;
+                    }
+
+                    .credits {
+                        .credit {
+                            p {
+                                font-size: 28px;
+                            }
+                        }
+                    }
+                }
+
+                .image {
+                    width: 100%;
+                }
+            }
+        }
+
+        .footer {
+            .title {
+                font-size: 160px;
+
+                .arrow-container {
+                    margin-top: 60px;
+                    scale: 1.5;
+                }
+            }
+
+            .swiper-no-swiping {
+                touch-action: none;
+            }
+
+            .outher-projects {
+                height: 700px;
+
+                .outher-project {
+                    .info {
+                        margin-top: -160px;
+
+                        h3 {
+                            font-size: 52px;
+                        }
+
+                        .text-project {
+                            p {
+                                font-size: 28px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-height: 720px) {
+    .modalproject{
+        .modal-header{
+            div{
+                img{
+                    width: 150px;
+                    height: 30px;
+                }
+                svg{
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+}
+
 @media(max-width: 1680px) {
     .modalproject {
         h2 {
@@ -534,5 +770,21 @@
             }
         }
 
+    }
+}
+
+@media(max-width: 1300px) {
+    .modalproject {
+        .footer {
+            .outher-projects {
+                .outher-project {
+                    .info {
+                        h3 {
+                            font-size: 40px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

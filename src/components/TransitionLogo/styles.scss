@@ -1,17 +1,12 @@
 .transition-logo {
-    z-index: 100;
+    z-index: 98;
     width: 100%;
     height: 110vh;
     position: relative;
 
-    .scaling-img-1 {
+    .scaling-img{
         transform-origin: center center;
         transition: transform 1s ease-in-out;
-    }
-
-    .scaling-img-2 {
-        transform-origin: center center;
-        transition: transform 1.5s ease-in-out;
     }
 
     .transition-background {
@@ -35,11 +30,25 @@
         opacity: 0.5;
         position: absolute;
         top: 60vh;
+        transition: transform 0.2s ease-out;
 
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+    }
+}
+
+@media (max-width: 2560px){
+    .transition-logo{
+        .logo {
+            top: 40vh;
+    
+            img {
+                width: 100%;
+                height: 110%;
+            }
         }
     }
 }

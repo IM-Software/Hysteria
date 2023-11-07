@@ -4,11 +4,39 @@ import LogoMobile from '../../assets/logo-mobile.png'
 import { useState } from 'react'
 
 
-export const Header = ({ }) => {
+export const Header = () => {
     const [showMenu, setShowMenu] = useState(false)
+    const [disableAnchors, setDisableAnchors] = useState(false)
 
     const toggleMenu = () => {
         setShowMenu((prev) => !prev)
+    }
+
+    const scrollToSection = (sectionId) => {
+        const section = document.getElementById(sectionId)
+        
+        if (section && disableAnchors === false) {
+            setDisableAnchors(true)
+            const projectsSecition = document.getElementById('projects')
+            const targetOffset = projectsSecition.offsetTop
+            if (sectionId === 'brandlab-navigation' && window.scrollY < targetOffset) {
+                const aboutSection = document.getElementById('about')
+                aboutSection.scrollIntoView()
+                setTimeout(function () {
+                    const projectsSecition = document.getElementById('projects')
+                    projectsSecition.scrollIntoView()
+                    setTimeout(function () {
+                        section.scrollIntoView()
+                        toggleMenu()
+                        setDisableAnchors(false)
+                    }, 700)
+                }, 500)
+            } else {
+                section.scrollIntoView()
+                setDisableAnchors(false)
+                toggleMenu()
+            }
+        }
     }
 
     return (
@@ -21,11 +49,11 @@ export const Header = ({ }) => {
                     </div>
                 </div>
                 <nav className="menu-items">
-                    <a href='#home' onClick={toggleMenu}>home</a>
-                    <a href='#about' onClick={toggleMenu}>quem é hysteria</a>
-                    <a href='#projects' onClick={toggleMenu}>projetos</a>
-                    <a href='#brandlab' onClick={toggleMenu}>brand lab</a>
-                    <a href='#contact' onClick={toggleMenu}>contato</a>
+                    <a onClick={() => scrollToSection('home')}>home</a>
+                    <a onClick={() => scrollToSection('about')}>quem é hysteria</a>
+                    <a onClick={() => scrollToSection('projects')}>projetos</a>
+                    <a onClick={() => scrollToSection('brandlab-navigation')}>brand lab</a>
+                    <a onClick={() => scrollToSection('contact')}>contato</a>
                 </nav>
                 <div className="menu-footer">
                     <p>política de privacidade</p>

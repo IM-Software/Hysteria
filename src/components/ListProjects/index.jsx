@@ -1,8 +1,8 @@
 import './styles.scss'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ModalProject } from '../ModalProject'
-import { gsap } from 'gsap'
 import { Project } from '../Project'
+import { gsap } from 'gsap'
 
 export const Projects = ({ showScroll, projects }) => {
   const [showModal, setShowModal] = useState(false)
@@ -57,36 +57,29 @@ export const Projects = ({ showScroll, projects }) => {
   const toggleModal = (index) => {
     setShowModal(!showModal)
     setSelectedProject(index)
+    showScroll(false)
   }
 
-  gsap.to('.title', {
-    opacity: '1',
-    ease: 'power1.easeInOut',
-    scrollTrigger: {
-      trigger: '#transition-logo-1',
-      start: "center 10vh",
-      end: 'center 10vh',
-      scrub: 0.2,
-      once: true
-    }
-  })
+  useEffect(() => {
+    gsap.to('.project-title', {
+      className: `project-title show`,
+      ease: 'power1.easeInOut',
+      scrollTrigger: {
+        trigger: '.projects',
+        start: 'top center+=30%',
+        scrub: 1,
+        once: true
+      },
+    })
+  }, [])
 
-  gsap.to('.list-project', {
-    opacity: '1',
-    ease: 'power1.easeInOut',
-    scrollTrigger: {
-      trigger: '#transition-logo-1',
-      start: "center 10vh",
-      end: 'center 10vh',
-      scrub: 0.2,
-      once: true
-    }
-  })
+
+
 
   return (
     <>
       <div className='projects' id='projects'>
-        <div className='title'>
+        <div className='project-title'>
           <h1 className='titles'>projetos</h1>
         </div>
         <div className='list-project'>
@@ -94,14 +87,14 @@ export const Projects = ({ showScroll, projects }) => {
             <div key={rowIndex} className='row'>
               {row.map((project, index) => {
                 if (index === 0) {
-                  return <Project key={project.id} project={project} toggleModal={toggleModal} />
+                  return <Project key={project.id} project={project} toggleModal={toggleModal}/>
                 }
                 if (index === 1) {
                   return (
                     <div key={index} className='group-projects'>
                       {colums[rowIndex].map((columProject) =>
                         columProject ? (
-                          <Project key={columProject.id} project={columProject} toggleModal={toggleModal} />
+                          <Project key={columProject.id} project={columProject} toggleModal={toggleModal}/>
                         ) : null
                       )}
                     </div>

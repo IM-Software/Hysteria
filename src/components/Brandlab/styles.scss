@@ -9,29 +9,20 @@
     top: 0;
     z-index: 20;
     align-items: center;
-    pointer-events: none;
-
+    padding-top: 200px;
 
     .brandlab-circle {
         display: none;
         background-color: var(--bg-color-four);
         scale: 0.05;
         border-radius: 100%;
-        width: 1849px;
-        height: 1849px;
+        width: 1850px;
+        height: 1850px;
         justify-content: center;
         align-items: center;
         position: absolute;
-        margin-top: -60vh;
+        margin-top: -100vh;
         transition: transform ease-in-out;
-    }
-
-    #brandlab {
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        margin-top: -60vh;
-        pointer-events: none;
     }
 
     .front {
@@ -39,67 +30,81 @@
         height: 100%;
         position: absolute;
         display: flex;
+        z-index: 50;
         justify-content: center;
         align-items: center;
-        margin-top: -50vh;
+        margin-top: -100vh;
 
         .texts {
+            display: flex;
+            justify-content: left;
+            align-items: left;
+            flex-direction: column;
+            width: 100%;
             z-index: 50;
             position: absolute;
-            margin-right: 42vw;
-            margin-left: 10px;
-            margin-top: 100px;
+            margin-left: 8vw;
+            margin-top: 170px;
+            gap: 26px;
             color: white;
             min-height: 548px;
 
-            h2{
+            h2 {
                 opacity: 0;
-                &.show{
+                line-height: normal;
+
+                &.show {
                     animation: move-title-brand 1.5s ease-in-out forwards;
                 }
             }
 
             h3 {
-                margin-top: 30px;
                 font-family: var(--font-secondary);
                 font-weight: 700;
                 font-size: 25px;
                 line-height: 39px;
                 max-width: 709px;
                 opacity: 0;
-                &.show{
+
+                &.show {
                     opacity: 1;
                     animation: move-brand-paragraph 1.2s ease-out;
                 }
             }
 
             p {
+                margin-top: -60px;
                 max-width: 900px;
                 margin-right: 50px;
                 opacity: 0;
-                &.show{
+
+                &.show {
                     opacity: 1;
                     animation: move-brand-paragraph 1.2s ease-out;
                 }
             }
 
-            .brands{
-                margin-top: 37px;
+            .brands {
                 display: flex;
-                position: absolute;
                 gap: 20px;
+                opacity: 0;
 
-                .brand{
+                &.show {
+                    opacity: 1;
+                    transition: opacity 1s ease-in-out;
+                }
+
+                .brand {
                     display: none;
                     max-width: 150px;
                     max-height: 100px;
                     animation: move-sub 1.3s ease-out;
 
-                    &.show{
+                    &.show {
                         display: flex;
                     }
 
-                    img{
+                    img {
                         max-width: 100%;
                         max-height: 100%;
                         object-fit: cover;
@@ -113,34 +118,9 @@
             width: 886px;
             height: 886px;
             position: absolute;
-            margin-left: 50vw;
+            margin-left: 51vw;
             z-index: 3;
-
-            .video-circle-top {
-                display: flex;
-                width: 1242.7px;
-                height: 1242.7px;
-                border-radius: 100%;
-                border: 1px solid var(--bg-color-four);
-                z-index: 1;
-                position: absolute;
-                top: -35vh;
-                box-shadow: 0px 3.2260401248931885px 75.81194305419922px 8.065099716186523px rgba(0, 0, 0, 0.50);
-                animation: decrease 1s ease-in-out forwards;
-            }
-
-            .video-circle {
-                display: flex;
-                width: 892px;
-                height: 892px;
-                border-radius: 100%;
-                border: 1px solid var(--bg-color-four);
-                z-index: 1;
-                position: absolute;
-                margin-left: -5%;
-                box-shadow: 0px 3.2260401248931885px 75.81194305419922px 8.065099716186523px rgba(0, 0, 0, 0.50);
-                animation: decrease 1s ease-in-out forwards;
-            }
+            margin-top: 100px;
 
             video {
                 width: 100%;
@@ -153,6 +133,22 @@
             }
         }
     }
+}
+
+#brandlab-navigation {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    margin-top: 50vh;
+    pointer-events: none;
+}
+
+#brandlab {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    margin-top: -2vh;
+    pointer-events: none;
 }
 
 @keyframes decrease {
@@ -211,66 +207,253 @@
     }
 }
 
+@media (min-width: 3000px){
+    #brandlab {
+        margin-top: 2vh;
+    }
+    .brandlab {
+        .brandlab-circle {
+            width: 3450px;
+            height: 3450px;
+            margin-top: -90vh;
+        }
 
-@media(max-width: 1600px){
-    .brandlab{
-        .brandlab-circle{
-            width: 1500px;
-            height: 1500px;
-        }
-        .front{
-            .texts{
-                margin-right: 35vw;
+        .front {
+            .texts {
+                margin-top: 50vh;
+                margin-left: 7vw;
+                p {
+                    max-width: 1650px;
+                    line-height: normal;
+                }
+                h3{
+                    font-size: 64px;
+                    line-height: normal;
+                    max-width: 1800px;
+                }
+                .brands {
+                    gap: 50px;
+                    .brand {
+                        max-width: 350px;
+                        max-height: 300px;
+                    }
+                }
             }
+
             .brandlab-video {
-                width: 786px;
-                height: 786px;
-                .video-circle-top {
-                    width: 1000px;
-                    height: 1000px;
-                }
-                .video-circle {
-                    width: 792px;
-                    height: 792px;
-                }
+                width: 1650px;
+                height: 1650px;
+                margin-bottom: -27vh;
+                margin-left: 53vw;
             }
         }
     }
 }
-@media(max-width: 1480px){
-    .brandlab{
-        .front{
-            .texts{
-                margin-right: 25vw;
+
+@media (min-width: 2000px) and (max-width: 3000px)  {
+    .brandlab {
+        .brandlab-circle {
+            width: 2450px;
+            height: 2450px;
+            margin-top: -70vh;
+            transform: translate3d(-10vh);
+        }
+
+        .front {
+            .texts {
+                margin-top: 200px;
+                margin-left: 8vw;
+                p {
+                    max-width: 1150px;
+                    line-height: normal;
+                }
+                h3{
+                    font-size: 28px;
+                    max-width: 900px;
+                }
+                .brands {
+                    .brand {
+                        max-width: 200px;
+                        max-height: 150px;
+                    }
+                }
+            }
+
+            .brandlab-video {
+                width: 1050px;
+                height: 1050px;
+                margin-bottom: -5vh;
+                margin-left: 52vw;
             }
         }
     }
 }
-@media (max-width: 1400px) and (max-height: 940px){
-    .brandlab{
-        .brandlab-circle{
-            margin-top: 20vh;
-            width: 1300px;
-            height: 1300px;
+
+@media(max-width: 1600px) {
+    .brandlab {
+        .brandlab-circle {
+            width: 1550px;
+            height: 1550px;
         }
-        .front{
-            margin-bottom: -5vh;
-            .texts{
-                margin-right: 23vw;
+
+        .front {
+            .texts {
+                p {
+                    max-width: 45%;
+                }
+                h3{
+                    max-width: 45%;
+                }
             }
+
+            .brandlab-video {
+                width: 686px;
+                height: 686px;
+                margin-bottom: 13vh;
+            }
+        }
+    }
+}
+
+@media (max-width: 1500px) and (max-height: 940px) {
+    .brandlab {
+        .brandlab-circle {
+            width: 1390px;
+            height: 1390px;
+        }
+
+        .front {
+            h2 {
+                font-size: 184px;
+            }
+
+            .texts {
+                margin-top: 100px;
+
+                p {
+                    max-width: 45%;
+                }
+
+                .brands {
+                    .brand {
+                        max-width: 130px;
+                    }
+                }
+            }
+
+            .brandlab-video {
+                width: 680px;
+                height: 680px;
+                margin-bottom: 15vh;
+            }
+        }
+    }
+}
+
+@media (max-width: 1450px){
+    .brandlab {
+        .brandlab-circle {
+            width: 1370px;
+            height: 1370px;
+            margin-top: -116vh;
+        }
+
+        .front {
+            .texts {
+                margin-left: 5.5vw;
+                margin-top: 250px;
+                h3 {
+                    font-size: 20px;
+                    margin-left: -5px;
+                    line-height: normal;
+                }
+                .brands {
+                    .brand {
+                        max-width: 120px;
+                    }
+                }
+            }
+
             .brandlab-video {
                 width: 600px;
                 height: 600px;
-                .video-circle-top {
-                    top: -15vh;
-                    width: 670px;
-                    height: 670px;
+                margin-left: 55vw;
+                margin-bottom: 16vh;
+            }
+        }
+    }
+}
+
+@media (max-width: 1400px) and (max-height: 940px) {
+    .brandlab {
+        .brandlab-circle {
+            width: 1270px;
+            height: 1270px;
+            margin-top: -126vh;
+        }
+
+        .front {
+            .texts {
+                margin-left: 7.5vw;
+                margin-top: 150px;
+                h3 {
+                    font-size: 20px;
+                    margin-left: -5px;
+                    line-height: normal;
                 }
-                .video-circle {
-                    width: 612px;
-                    height: 612px;
+                .brands {
+                    .brand {
+                        max-width: 120px;
+                    }
                 }
             }
+
+            .brandlab-video {
+                width: 600px;
+                height: 600px;
+                margin-left: 53vw;
+                margin-bottom: 25vh;
+            }
+        }
+    }
+}
+
+@media (max-width: 1300px) and (max-height: 940px) {
+    .brandlab {
+        .brandlab-circle {
+            width: 1180px;
+            height: 1180px;
+            margin-top: -126vh;
+        }
+        .front {
+            .texts {
+                margin-left: 6vw;
+                h3 {
+                    font-size: 20px;
+                    line-height: normal;
+                    max-width: 50%;
+                }
+
+                .brands {
+                    .brand {
+                        max-width: 100px;
+                    }
+                }
+            }
+
+            .brandlab-video {
+                width: 550px;
+                height: 550px;
+                margin-bottom: 33vh;
+            }
+        }
+    }
+}
+
+@media (max-width: 1300px) and (min-height: 900px) {
+    .brandlab{
+        .front {
+            margin-top: -76vh;
         }
     }
 }

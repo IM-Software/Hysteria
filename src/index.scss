@@ -59,14 +59,13 @@ table {
 	--bg-color-secondary: #242424;
 	--bg-color-third: #2E2E2E;
 	--bg-color-four: #E95858;
-	--bg-color-play: #F32D2D;;
+	--bg-color-play: #F32D2D;
 	--font-primary: 'Newsreader';
 	--font-secondary: 'Roboto'
 }
 
 html{
 	font-family: var(--font-primary);
-	scroll-behavior: smooth;
 }
 
 html ::-webkit-scrollbar {

@@ -10,12 +10,23 @@
     position: relative;
     background-color: var(--bg-color-primary);
     
-    .title{
+    .project-title{
+        width: 100%;
+        display: flex;
+        justify-content: right;
+        align-items: right;
+        margin-left: -10%;
         margin-top: 150px;
         z-index: 5;
-        opacity: 0;
         transition: opacity 1s ease-in-out;
+        opacity: 0;
+    
+        &.show{
+            opacity: 1;
+        }
+
         h1{
+            opacity: 1;
             color: white;
             margin-left: 72px;
         }
@@ -23,11 +34,14 @@
 
     .row{
         padding-left: 36px;
-        padding-right: 36px;
         width: 100%;
         height: 100%;
         display: flex;
         gap: 36px;
+
+        .show{
+            opacity: 1;
+        }
     }
 
     .group-projects{
@@ -43,10 +57,53 @@
         gap: 36px;
         width: 100%;
         z-index: 4;
-        opacity: 0;
         height: 100%;
-        margin-top: -80px;
+        margin-top: -60px;
         transition: opacity 1s ease-in-out;
+        padding-bottom: 200px;
+    }
+}
+
+@media (min-width: 3000px){
+    .projects{
+        .list-project{
+            margin-top: 1230px;
+            scale: 2;
+            margin-left: 50vw;
+            padding-bottom: 700px;
+        }
+    }
+}
+
+@media (min-width: 2000px)  and (max-width: 3000px){
+    .projects{
+        .project-title{
+            width: 100%;
+            display: flex;
+            justify-content: right;
+            align-items: right;
+            margin-left: -10%;
+            margin-top: 150px;
+            z-index: 5;
+            transition: opacity 1s ease-in-out;
+            opacity: 0;
+        
+            &.show{
+                opacity: 1;
+            }
+    
+            h1{
+                opacity: 1;
+                color: white;
+                margin-left: 72px;
+            }
+        }
+        .list-project{
+            margin-top: 295px;
+            scale: 1.30;
+            margin-left: 16.5vw;
+            padding-bottom: 500px;
+        }
     }
 }
 
@@ -54,8 +111,19 @@
     .projects{
         .group-projects{
             .project{
-                max-width: 50vw;
+                max-width: 60vw;
             }
+        }
+        .list-project{
+            margin-top: -50px;
+        }
+    }
+}
+
+@media(max-width: 1280px){
+    .projects{
+        .list-project{
+            margin-top: -43px;
         }
     }
 }

@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: space-between;
     position: fixed;
-    z-index: 200;
+    z-index: 100;
     width: 100vw;
     pointer-events: none;
     animation: move-down 1s ease-in-out forwards;
@@ -25,7 +25,7 @@ svg {
     background-color: var(--bg-color-primary);
     width: 100vw;
     height: 100vh;
-    z-index: 199;
+    z-index: 99;
     position: fixed;
     display: flex;
     align-items: left;
@@ -105,6 +105,57 @@ svg {
     }
 }
 
+@media (min-width: 2000px) {
+    .header {
+        div{
+            img{
+                width: 250px;
+            }
+            svg{
+                width: 35px;
+                height: 35px;
+            }
+        }
+    }
+}
+
+@media (min-height: 2050px){
+    .header {
+        div{
+            padding: 60px 82px;
+            img{
+                width: 550px;
+            }
+            svg{
+                width: 70px;
+                height: 70px;
+            }
+        }
+    }
+    .menu{
+
+        .menu-header {
+            div {
+                padding: 60px 82px;
+            }
+        }
+        .menu-items {
+            margin-top: 100px;
+            padding-left: 82px;
+            gap: 50px;
+            a {
+                font-size: 240px;
+            }
+        }
+        .menu-footer{
+            p{
+                padding: 60px 82px;
+                font-size: 80px;
+            }
+        }
+    }
+}
+
 @media (max-height: 1050px){
     .menu{
         .menu-items {
@@ -121,6 +172,7 @@ svg {
         }
     }
 }
+
 @media (max-height: 900px){
     .menu{
         .menu-items {
@@ -181,6 +233,7 @@ svg {
         }
         .menu-footer{
             p{
+                margin-top: -20px;
                 font-size: 24px;
             }
         }

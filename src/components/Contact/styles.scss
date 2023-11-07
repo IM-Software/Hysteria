@@ -1,8 +1,9 @@
 .contact {
     width: 100%;
-    height: 105vh;
+    margin-top: 5vh;
+    min-height: 100vh;
     position: relative;
-    z-index: 24;
+    z-index: 42;
     color: white;
     display: flex;
     overflow: hidden;
@@ -17,7 +18,7 @@
     .text {
         width: 57%;
         height: 100vh;
-        margin-left: 74px;
+        margin-left: 54px;
         display: flex;
         justify-content: center;
         align-items: left;
@@ -40,7 +41,7 @@
             animation: fade 1s ease-in;
 
             h3 {
-                font-size: 62px;
+                font-size: 58px;
                 font-style: normal;
                 font-weight: 200;
                 line-height: normal;
@@ -78,10 +79,10 @@
 
 .contact-background{
     width: 100%;
-    height: 105vh;
+    height: 109vh;
     position: relative;
     background-color: var(--bg-color-primary);
-    z-index: 23;
+    z-index: 40;
     margin-top: -105vh;
 }
 
@@ -106,39 +107,173 @@
     }
 }
 
-@media (max-width: 1399px) {
+
+@media (min-width: 3000px){
+    .contact-background{
+        margin-top: -127vh;
+    }
     .contact {
+        margin-top: 10vh;
         .text {
+            margin-top: -200px;
+            margin-left: 40px;
             div {
                 h3 {
-                    font-size: 40px;
+                    font-size: 120px;
                 }
-
                 h4 {
-                    font-size: 32px;
+                    font-size: 96px;
+                    margin-top: 25px;
                 }
 
                 p {
-                    font-size: 16px;
+                    font-size: 72px;
+                    margin-top: 25px;
                 }
 
-                .social {
-                    svg {
-                        width: 50px;
-                        height: 50px;
-                    }
+                svg{
+                    margin-top: 25px;
+                    width: 150px;
+                    height: 150px;
                 }
+
             }
         }
     }
 }
 
-@media (max-width: 1299px) {
-    .contact {
-        height: 140vh;
 
+@media (min-width: 2000px) and (max-width: 3000px) {
+    .contact-background{
+        margin-top: -127vh;
+    }
+    .contact {
+        margin-top: 20vh;
         .text {
-            margin-top: 20vh;
+            margin-top: -100px;
+            margin-left: 120px;
+            div {
+                h3 {
+                    font-size: 72px;
+                }
+                h4 {
+                    font-size: 56px;
+                }
+
+                p {
+                    font-size: 40px;
+                }
+
+                svg{
+                    width: 80px;
+                    height: 80px;
+                }
+
+            }
         }
+    }
+}
+
+@media (max-width: 1600px) {
+    .contact {
+        .text {
+            margin-top: 20px;
+            margin-left: 43px;
+            div {
+                h3 {
+                    font-size: 54px;
+                }
+                h4 {
+                    font-size: 40px;
+                }
+
+                p {
+                    font-size: 24px;
+                }
+
+            }
+        }
+    }
+}
+
+@media(max-width: 1440px){
+    .contact{
+        margin-top: 5vh;
+        .text{
+            div {
+                h3 {
+                    font-size: 40px;
+                }
+                h4 {
+                    font-size: 32px;
+                }
+
+                svg{
+                    width: 50px;
+                    height: 50px;
+                }
+
+            }
+        }
+    }
+    .contact-background{
+        margin-top: -112vh;
+    }
+}
+
+@media(max-width: 1370px){
+    .contact{
+        margin-top: 6vh;
+        .text{
+            div {
+                h3 {
+                    font-size: 40px;
+                }
+                h4 {
+                    font-size: 32px;
+                }
+
+                svg{
+                    width: 50px;
+                    height: 50px;
+                }
+
+            }
+        }
+    }
+    .contact-background{
+        margin-top: -112vh;
+    }
+}
+
+@media(max-width: 1290px){
+    .contact{
+        margin-top: 15vh;
+        .text{
+            margin-left: 23px;
+            div {
+                h3 {
+                    font-size: 40px;
+                }
+                h4 {
+                    font-size: 32px;
+                }
+
+                svg{
+                    width: 50px;
+                    height: 50px;
+                }
+
+            }
+        }
+    }
+    .contact-background{
+        margin-top: -125vh;
+    }
+}
+
+@media (max-width: 1300px) and (min-height: 900px) {
+    .contact{
+        margin-top: -10vh;
     }
 }

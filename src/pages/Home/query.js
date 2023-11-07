@@ -50,6 +50,9 @@ export const HOME_QUERY = `
     support,
     direction,
     videourl,
+    videoThumb {
+      url
+    },
     image1 {
       url
     },

@@ -6,6 +6,7 @@ export const Project = ({ project, toggleModal }) => {
     const imgDivRef = useRef(null)
     const videoRef = useRef(null)
     const textRef = useRef(null)
+    const projectRef = useRef(null)
 
     const playVideo = () => {
         if (videoRef.current) {
@@ -26,6 +27,7 @@ export const Project = ({ project, toggleModal }) => {
         const imgDiv = imgDivRef.current
         const videoDiv = videoRef.current
         const textDiv = textRef.current
+        const projectDiv = projectRef.current
 
         gsap.to(imgDiv, {
             y: 40, 
@@ -58,6 +60,20 @@ export const Project = ({ project, toggleModal }) => {
                 scrub: 2,
             },
         })
+
+        gsap.to(projectDiv, {
+            className: `project show`,
+            ease: 'power1.easeInOut',
+            scrollTrigger: {
+                trigger: projectDiv,
+                start: 'top center+=30%',
+                end: 'top center+=30%',
+                once: true,
+                scrub: 1,
+            },
+        })
+
+
     }, [])
 
     return (
@@ -67,6 +83,7 @@ export const Project = ({ project, toggleModal }) => {
                 height: `${project.height}px`,
             }}
             onMouseEnter={playVideo} onMouseLeave={pauseVideo}
+            ref={projectRef}
         >
             <div className='project-img'>
                 {project.prevVideo &&

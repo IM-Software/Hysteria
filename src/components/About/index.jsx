@@ -42,26 +42,27 @@ export const About = ({ text }) => {
     }, [])
 
     return (
-        <div className='about' id='about'>
-            <div className='about-container'>
-                <div className="about-text">
-                    <div className="about-title">
-                        <h3 >{text.titleSecondary}</h3>
-                        <h2 className='titles title'>{text.title}</h2>
+        <>
+            <div id='about'></div><div className='about'>
+                <div className='about-container'>
+                    <div className="about-text">
+                        <div className="about-title">
+                            <h3>{text.titleSecondary}</h3>
+                            <h2 className='titles title'>{text.title}</h2>
+                        </div>
+                        <div className="paragraph">
+                            <p className='paragraphs'>{text.text}</p>
+                        </div>
                     </div>
-                    <div className="paragraph">
-                        <p className='paragraphs'>{text.text}</p>
+                    <div className="footer">
+                        {showFooter &&
+                            <>
+                                <p>Hysteria: powered by </p>
+                                <a href="https://conspiracao.com.br" target='_blank'>Conspiração.</a>
+                            </>}
                     </div>
-                </div>
-                <div className="footer">
-                    {showFooter &&
-                        <>
-                            <p>Hysteria: powered by </p>
-                            <a href="https://conspiracao.com.br" target='_blank'>Conspiração.</a>
-                        </>
-                    }
                 </div>
             </div>
-        </div>
+        </>
     )
 }
