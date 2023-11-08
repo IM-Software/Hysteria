@@ -7,10 +7,10 @@
     }
     .paragraphs{
         font-family: var(--font-secondary);
-        font-size: 24px;
+        font-size: 20px;
         font-style: normal;
         font-weight: 300;
-        line-height: 47px;
+        line-height: 40px;
         letter-spacing: 1.32px;
     }
     .loading{
@@ -40,8 +40,8 @@
             font-size: 474px;
         }
         .paragraphs{
-            font-size: 80px;
-            line-height: normal;
+            font-size: 50px;
+            line-height: 100px;
         }
         .loading{
             scale: 3;
@@ -55,8 +55,8 @@
             font-size: 304px;
         }
         .paragraphs{
-            font-size: 32px;
-            line-height: normal;
+            font-size: 28px;
+            line-height: 56px;
         }
     }
 }
@@ -67,7 +67,8 @@
             font-size: 186px;
         }
         .paragraphs{
-            line-height: 30px;
+            font-size: 16px;
+            line-height: 32px;
         }
     }
 }
@@ -76,10 +77,6 @@
     .home {
         .titles{
             font-size: 180px !important;
-        }
-        .paragraphs{
-            line-height: 30px;
-            font-size: 20px;
         }
     }
 }

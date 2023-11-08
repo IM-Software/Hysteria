@@ -45,7 +45,7 @@
             position: absolute;
             margin-left: 8vw;
             margin-top: 170px;
-            gap: 26px;
+            gap: 35px;
             color: white;
             min-height: 548px;
 
@@ -61,8 +61,8 @@
             h3 {
                 font-family: var(--font-secondary);
                 font-weight: 700;
-                font-size: 25px;
-                line-height: 39px;
+                font-size: 20px;
+                line-height: 40px;
                 max-width: 709px;
                 opacity: 0;
 
@@ -73,8 +73,8 @@
             }
 
             p {
-                margin-top: -60px;
-                max-width: 900px;
+                margin-top: -44px;
+                max-width: 811px;
                 margin-right: 50px;
                 opacity: 0;
 
@@ -106,6 +106,7 @@
                     }
 
                     img {
+                        max-width: 150px;
                         object-fit: cover;
                     }
                 }
@@ -218,16 +219,17 @@
 
         .front {
             .texts {
-                margin-top: 50vh;
+                margin-top: 40vh;
                 margin-left: 7vw;
                 p {
-                    max-width: 1650px;
-                    line-height: normal;
+                    max-width: 1700px;
+                    line-height: 100px;
                 }
                 h3{
-                    font-size: 64px;
-                    line-height: normal;
+                    font-size: 50px;
+                    line-height: 100px;
                     max-width: 1800px;
+                    margin-bottom: 40px;
                 }
                 .brands {
                     margin-top: 20px;
@@ -262,11 +264,21 @@
                 margin-left: 8vw;
                 p {
                     max-width: 1150px;
-                    line-height: normal;
                 }
                 h3{
                     font-size: 28px;
+                    line-height: 56px;
                     max-width: 900px;
+                }
+                .brands{
+                    gap: 50px;
+                    .brand{
+                        img{
+                            max-width: none;
+                            max-height: 120px;
+                            object-fit: none;
+                        }
+                    }
                 }
             }
 
@@ -293,12 +305,14 @@
                     max-width: 45%;
                 }
                 h3{
-                    max-width: 45%;
+                    font-size: 16px;
+                    line-height: 32px;
+                    max-width: 35%;
                 }
                 .brands{
                     .brand {
                         img{
-                            max-width: 200px;
+                            max-width: 120px;
                         }
                     }
                 }
@@ -353,11 +367,16 @@
         .front {
             .texts {
                 margin-left: 5.5vw;
-                margin-top: 250px;
+                margin-top: 150px;
                 h3 {
-                    font-size: 20px;
-                    margin-left: -5px;
-                    line-height: normal;
+                    line-height: 32px;
+                }
+                .brands{
+                    .brand {
+                        img{
+                            max-height: 50px;
+                        }
+                    }
                 }
             }
 
@@ -382,18 +401,14 @@
         .front {
             .texts {
                 margin-left: 7.5vw;
-                margin-top: 150px;
+                margin-top: 75px;
                 h3 {
-                    font-size: 20px;
-                    margin-left: -5px;
-                    line-height: normal;
+                    font-size: 14px;
+                    line-height: 28px;
                 }
-                .brands{
-                    .brand {
-                        img{
-                            max-width: 150px;
-                        }
-                    }
+                .paragraphs{
+                    font-size: 14px;
+                    line-height: 28px;
                 }
             }
 
@@ -418,9 +433,16 @@
             .texts {
                 margin-left: 6vw;
                 h3 {
-                    font-size: 20px;
-                    line-height: normal;
-                    max-width: 50%;
+                    margin-top: -15px;
+                    font-size: 14px;
+                    line-height: 28px;
+                }
+                .brands{
+                    .brand{
+                        img{
+                            max-height: 40px;
+                        }
+                    }
                 }
             }
 

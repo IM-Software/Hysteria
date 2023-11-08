@@ -58,8 +58,8 @@
             opacity: 1;
             width: 653px;
             height: 110%;
-            margin-top: -20px;
-            margin-left: 300px;
+            margin-top: 10px;
+            margin-left: 93px;
             transition: opacity 1s ease-in-out;
 
             .paragraphs {
@@ -79,7 +79,7 @@
         opacity: 0;
         min-height: 39px;
         margin-top: 100px;
-        margin-left: 485px;
+        margin-left: 289px;
         justify-content: center;
         align-items: center;
         color: white;
@@ -175,8 +175,8 @@
                 }
 
                 .paragraph {
-                    width: 2000px;
-                    margin-left: 1300px;
+                    width: 1500px;
+                    margin-left: 1200px;
 
                     p {
                         width: 100%;
@@ -185,8 +185,8 @@
             }
 
             .footer {
-                font-size: 72px;
-                margin-left: 22.5%;
+                font-size: 50px;
+                margin-left: 24.5%;
 
                 a {
                     margin-left: 20px;
@@ -201,7 +201,8 @@
         .about-container {
 
             .about-text {
-                margin-left: 430px;
+                margin-left: 400px;
+                margin-top: -100px;
 
                 .about-title {
                     flex-direction: column;
@@ -218,15 +219,16 @@
                 }
 
                 .paragraph {
-                    margin-top: -20px;
-                    margin-left: 150px;
+                    margin-top: 10px;
+                    margin-left: 300px;
+                    width: 950px;
                 }
             }
 
             .footer {
                 font-size: 28px;
                 margin-top: 40px;
-                margin-left: 15%;
+                margin-left: 8.2%;
             }
         }
     }
@@ -250,12 +252,14 @@
                 }
             }
             .paragraph{
+                width: 550px;
+                margin-left: 180px;
                 margin-top: 10px;
             }
         }
 
         .footer {
-            margin-left: 19.35%;
+            margin-left: 18.35%;
         }
     }
 }
@@ -288,16 +292,14 @@
             }
 
             .paragraph {
-                .paragraphs {
-                    font-size: 21px;
-                }
+                margin-left: 260px;
             }
         }
 
         .footer {
             margin-top: 50px;
             font-size: 16px;
-            margin-left: 14.35%;
+            margin-left: 19.35%;
         }
     }
 }
@@ -321,7 +323,10 @@
 
             .paragraph {
                 .paragraphs {
-                    font-size: 21px;
+                    font-size: 14px;
+                    line-height: 28px;
+                    width: 500px;
+                    margin-left: -20px;
                 }
             }
         }
@@ -329,7 +334,7 @@
         .footer {
             margin-top: 50px;
             font-size: 16px;
-            margin-left: 14.35%;
+            margin-left: 16.35%;
         }
     }
 }
@@ -353,14 +358,14 @@
 
             .paragraph {
                 .paragraphs {
-                    font-size: 21px;
+                    font-size: 14px;
                 }
             }
         }
 
         .footer {
             margin-top: 50px;
-            font-size: 16px;
+            font-size: 14px;
             margin-left: 14.35%;
         }
     }
