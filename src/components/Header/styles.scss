@@ -7,7 +7,8 @@
     width: 100vw;
     pointer-events: none;
     animation: move-down 1s ease-in-out forwards;
-    .mobile{
+
+    .mobile {
         display: none;
     }
 
@@ -39,6 +40,7 @@ svg {
         justify-content: space-between;
         width: 100%;
         height: 103px;
+
         div {
             padding: 40px 62px;
         }
@@ -107,11 +109,12 @@ svg {
 
 @media (min-width: 2000px) {
     .header {
-        div{
-            img{
+        div {
+            img {
                 width: 250px;
             }
-            svg{
+
+            svg {
                 width: 35px;
                 height: 35px;
             }
@@ -119,36 +122,42 @@ svg {
     }
 }
 
-@media (min-height: 2050px){
+@media (min-height: 2050px) {
     .header {
-        div{
+        div {
             padding: 60px 82px;
-            img{
+
+            img {
                 width: 550px;
             }
-            svg{
+
+            svg {
                 width: 70px;
                 height: 70px;
             }
         }
     }
-    .menu{
+
+    .menu {
 
         .menu-header {
             div {
                 padding: 60px 82px;
             }
         }
+
         .menu-items {
             margin-top: 100px;
             padding-left: 82px;
             gap: 50px;
+
             a {
                 font-size: 240px;
             }
         }
-        .menu-footer{
-            p{
+
+        .menu-footer {
+            p {
                 padding: 60px 82px;
                 font-size: 80px;
             }
@@ -156,25 +165,27 @@ svg {
     }
 }
 
-@media (max-height: 1050px){
-    .menu{
+@media (max-height: 1050px) {
+    .menu {
         .menu-items {
             margin-top: 10px;
             gap: 10px;
+
             a {
                 font-size: 112px;
             }
         }
-        .menu-footer{
-            p{
+
+        .menu-footer {
+            p {
                 font-size: 24px;
             }
         }
     }
 }
 
-@media (max-height: 900px){
-    .menu{
+@media (max-height: 900px) {
+    .menu {
         .menu-items {
             a {
                 font-size: 88px;
@@ -183,56 +194,47 @@ svg {
     }
 }
 
-@media (max-height: 768px) {
-    .header{
-        div{
-            img{
-                width: 150px;
-                height: 30px;
-            }
-            svg{
-                width: 20px;
-                height: 20px;
-            }
-        }
-    }
-    .menu{
+@media (max-height: 790px) {
+    .menu {
         .menu-items {
             margin-top: 5px;
             gap: 15px;
+
             a {
                 font-size: 72px;
             }
         }
-        .menu-footer{
+
+        .menu-footer {
             margin-top: 10px;
-            p{
+
+            p {
                 font-size: 32px;
             }
         }
     }
 }
+
 @media (max-height: 720px) {
-    .menu{
-        div{
-            img{
-                width: 150px;
-                height: 30px;
-            }
-            svg{
+    .menu {
+        div {
+            svg {
                 width: 20px;
                 height: 20px;
             }
         }
+
         .menu-items {
             margin-top: -30px;
             gap: 10px;
+
             a {
                 font-size: 64px;
             }
         }
-        .menu-footer{
-            p{
+
+        .menu-footer {
+            p {
                 margin-top: -20px;
                 font-size: 24px;
             }
@@ -241,58 +243,77 @@ svg {
 }
 
 @media (max-width: 768px) {
-    .header{
-        div{
-            .mobile{
+    .header {
+        div {
+            img {
+                width: 150px;
+                height: 30px;
+            }
+
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            padding: 32px;
+
+            .mobile {
                 width: 100%;
-                height: 100%;
                 display: block;
             }
-            .pc{
+
+            .pc {
                 display: none;
             }
         }
     }
-    .menu{
+
+    .menu {
         .menu-header {
             div {
                 padding: 32px;
             }
         }
-        div{
-            .mobile{
+
+        div {
+            .mobile {
                 width: 100%;
                 height: 100%;
                 display: block;
             }
-            .pc{
+
+            .pc {
                 display: none;
             }
-            svg{
+
+            svg {
                 width: 20px;
                 height: 20px;
             }
         }
+
         .menu-items {
             width: 100%;
             height: 100%;
-            justify-content: end;
+            justify-content: center;
             padding-left: 28px;
+
             a {
                 font-size: 80px;
             }
         }
-        .menu-footer{
+
+        .menu-footer {
             display: flex;
             align-items: start;
             justify-content: end;
             flex-direction: column;
             padding-left: 28px;
-            margin-bottom: 50px;
+            margin-bottom: 100px;
+            height: auto;
             gap: 30px;
-            width: 100%;
-            height: 100%;
-            p{
+
+            p {
                 padding: 0px 0px;
                 font-size: 24px;
             }
@@ -300,12 +321,19 @@ svg {
     }
 }
 
-@media (max-width: 500px) {
-    .menu{
+@media (max-width: 550px) {
+    .menu {
         .menu-items {
-            padding-left: 28px;
             a {
-                font-size: 46px;
+                font-size: 40px;
+            }
+        }
+
+        .menu-footer {
+            gap: 40px;
+
+            p {
+                font-size: 16px;
             }
         }
     }

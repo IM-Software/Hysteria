@@ -1,6 +1,6 @@
 import './styles.scss'
 import { useRef, useEffect } from 'react'
-import gsap from 'gsap';
+import gsap from 'gsap'
 
 export const Project = ({ project, toggleModal }) => {
     const imgDivRef = useRef(null)
@@ -28,52 +28,50 @@ export const Project = ({ project, toggleModal }) => {
         const videoDiv = videoRef.current
         const textDiv = textRef.current
         const projectDiv = projectRef.current
+            gsap.to(imgDiv, {
+                y: 40,
+                ease: 'power1.easeInOut',
+                scrollTrigger: {
+                    trigger: '.projects',
+                    start: 'top top',
+                    end: 'bottom +=20vh',
+                    scrub: 2,
+                },
+            })
+            gsap.to(videoDiv, {
+                y: 40,
+                ease: 'power1.easeInOut',
+                scrollTrigger: {
+                    trigger: '.projects',
+                    start: 'top top',
+                    end: 'bottom +=20vh',
+                    scrub: 2,
+                },
+            })
 
-        gsap.to(imgDiv, {
-            y: 40, 
-            ease: 'power1.easeInOut',
-            scrollTrigger: {
-                trigger: '.projects',
-                start: 'top top',
-                end: 'bottom +=20vh',
-                scrub: 2,
-            },
-        })
-        gsap.to(videoDiv, {
-            y: 40, 
-            ease: 'power1.easeInOut',
-            scrollTrigger: {
-                trigger: '.projects',
-                start: 'top top',
-                end: 'bottom +=20vh',
-                scrub: 2,
-            },
-        })
+            gsap.to(textDiv, {
+                y: 20,
+                ease: 'power1.easeInOut',
+                scrollTrigger: {
+                    trigger: '.projects',
+                    start: 'top top',
+                    end: 'bottom +=20vh',
+                    scrub: 2,
+                },
+            })
 
-        gsap.to(textDiv, {
-            y: 20, 
-            ease: 'power1.easeInOut',
-            scrollTrigger: {
-                trigger: '.projects',
-                start: 'top top',
-                end: 'bottom +=20vh',
-                scrub: 2,
-            },
-        })
-
-        gsap.to(projectDiv, {
-            className: `project show`,
-            ease: 'power1.easeInOut',
-            scrollTrigger: {
-                trigger: projectDiv,
-                start: 'top center+=30%',
-                end: 'top center+=30%',
-                once: true,
-                scrub: 1,
-            },
-        })
-
-
+            gsap.to(projectDiv, {
+                className: `project show`,
+                ease: 'power1.easeInOut',
+                scrollTrigger: {
+                    trigger: projectDiv,
+                    start: 'top center+=30%',
+                    end: 'top center+=30%',
+                    once: true,
+                    scrub: 1,
+                },
+            })
+        
     }, [])
 
     return (
@@ -99,6 +97,7 @@ export const Project = ({ project, toggleModal }) => {
                     <p className='bold'>{project.stream}</p>
                 </div>
             </div>
+            <div className="project-shadown"></div>
         </div>
     )
 }

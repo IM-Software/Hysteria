@@ -4,13 +4,15 @@ import LogoMobile from '../../assets/logo-mobile.png'
 import { useState } from 'react'
 
 
-export const Header = () => {
+export const Header = ({showScroll}) => {
     const [showMenu, setShowMenu] = useState(false)
     const [disableAnchors, setDisableAnchors] = useState(false)
 
     const toggleMenu = () => {
         setShowMenu((prev) => !prev)
+        showScroll(showMenu)
     }
+
 
     const scrollToSection = (sectionId) => {
         const section = document.getElementById(sectionId)

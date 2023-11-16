@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './styles.scss'
 import { gsap } from 'gsap'
+import { useWindowSize } from "@uidotdev/usehooks"
 
 export const Brandlab = ({ text, brands }) => {
   const [showTitle, setShowTitle] = useState(false)
@@ -8,72 +9,110 @@ export const Brandlab = ({ text, brands }) => {
   const [showParagraph, setShowParagraph] = useState(false)
   const [showTextSecondary, setShowTextSecondary] = useState(false)
   const [showBrands, setShowBrands] = useState(false)
-  const [indexCurrent, setIndexCurrent] = useState(0)
+  const [indexCurrent, setIndexCurrent] = useState(-1)
+
+  const { width } = useWindowSize()
 
   const playVideo = () => {
     const videos = document.querySelectorAll('.video-brandlab')
     videos.forEach((video) => {
       video.play()
     })
-}
+  }
+
 
   useEffect(() => {
-    gsap.to('.brandlab-circle', {
-      display: 'flex',
-      scrollTrigger: {
-        trigger: '.brandlab',
-        start: "top center",
-        end: 'top center',
-        scrub: 0.5,
-        once: true,
-      },
-    })
+    if (width > 768) {
+      gsap.to('.brandlab-circle', {
+        display: 'flex',
+        scrollTrigger: {
+          trigger: '.brandlab',
+          start: "top center",
+          end: 'top center',
+          scrub: 0.5,
+          once: true,
+        },
+      })
 
+      gsap.to('.brandlab-circle', {
+        y: '60vh',
+        scale: 1,
+        scrollTrigger: {
+          trigger: '.brandlab',
+          start: "top center",
+          end: '+=35%',
+          scrub: 0.5,
+          once: true,
+        },
+        onComplete: () => {
+          setShowTitle(true)
+          setShowVideo(true)
+          setTimeout(function () {
+            setShowParagraph(true)
+          }, 700)
 
-    gsap.to('.brandlab-circle', {
-      y: '60vh',
-      scale: 1,
-      scrollTrigger: {
-        trigger: '.brandlab',
-        start: "top center",
-        end: '+=35%',
-        scrub: 0.5,
-        once: true,
-      },
-      onComplete: () => {
-        setShowTitle(true)
-        setShowVideo(true)
-        setTimeout(function () {
-          setShowParagraph(true)
-        }, 700)
+          setTimeout(function () {
+            setShowTextSecondary(true)
+            playVideo()
+          }, 1000)
 
-        setTimeout(function () {
-          setShowTextSecondary(true)
-          playVideo()
-        }, 1000)
-
-        setTimeout(function () {
           setShowBrands(true)
-          if(!showBrands){
-            brands.map((_brand, index) => {
-              setTimeout(function () {
-                setIndexCurrent(index)
-              }, 200 * index)
-            })
-          }
-        }, 1500)
-        gsap.to('.brandlab-circle', {
-          y: '-=50vh',
-          scrollTrigger: {
-            trigger: '.contact',
-            start: "top center",
-            end: 'top center',
-            scrub: 0.5,
-          },
+
+          gsap.to('.brandlab-circle', {
+            y: '-=50vh',
+            scrollTrigger: {
+              trigger: '.contact',
+              start: "top center",
+              end: 'top center',
+              scrub: 0.5,
+            },
+          })
+        }
+      })
+    }
+  }, [width])
+
+  const animationBrand = () =>{
+    setTimeout(function () {
+      if (showBrands === false) {
+        brands.map((_brand, index) => {
+          setTimeout(function () {
+            setIndexCurrent(index)
+          }, 200 * index)
         })
+        setShowBrands(true)
       }
-    })
-  }, [brands, showBrands])
+    }, 1500)
+  }
+
+  useEffect(() => {
+    if (width <= 768) {
+      gsap.to('.brandlab-circle-mobile', {
+        display: 'flex',
+        scrollTrigger: {
+          trigger: '.brandlab',
+          start: "top center",
+          end: 'top center',
+          scrub: 0.5,
+          once: true,
+        },
+        onStart: () => {
+          setShowTitle(true)
+          setShowVideo(true)
+          setTimeout(function () {
+            setShowParagraph(true)
+          }, 700)
+
+          animationBrand()
+
+          setTimeout(function () {
+            setShowTextSecondary(true)
+            playVideo()
+          }, 1000)
+        }
+      })
+    }
+  }, [width])
 
   return (
     <>
@@ -96,10 +135,14 @@ export const Brandlab = ({ text, brands }) => {
 
           {showVideo &&
             <div className="brandlab-video">
+              <div className='video-circle'></div>
+              <div className="video-circle-bottom"></div>
               <video className='video-brandlab' muted loop src={text.videoUrl}></video>
-            </div>}
+            </div>
+          }
         </div>
         <div className="brandlab-circle"></div>
+        <div className="brandlab-circle-mobile"></div>
       </div>
     </>
   )

@@ -52,3 +52,15 @@
         }
     }
 }
+
+@media (max-width: 768px){
+    .transition-logo{
+        .logo {
+            top: 70vh;
+            img {
+                width: 100%;
+                height: 110%;
+            }
+        }
+    }
+}

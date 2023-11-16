@@ -20,6 +20,7 @@ import { Initial1280 } from '../../components/Initial/1280'
 import { Initial2560 } from '../../components/Initial/2560'
 import { Initial3840 } from '../../components/Initial/3840'
 import { Initial1440 } from '../../components/Initial/1440'
+import { Initial768 } from '../../components/Initial/768'
 
 export const Home = () => {
   const [showHeader, setShowHeader] = useState(false)
@@ -27,8 +28,6 @@ export const Home = () => {
   const [showAnimationStart, setShowAnimationStart] = useState(true)
 
   const { loading, error, data } = useQuery(HOME_QUERY)
-
-  console.log(data)
 
   if (error) {
     Swal.fire({
@@ -43,9 +42,9 @@ export const Home = () => {
 
   const showScroll = (value) => {
     if (value === false) {
-      document.body.style.overflowY = 'hidden'
+      document.documentElement.style.overflowY = 'hidden'
     } else {
-      document.body.style.overflowY = 'visible'
+      document.documentElement.style.overflowY = 'visible'
     }
   }
 
@@ -61,7 +60,7 @@ export const Home = () => {
 
 
   const SIZES_RES = {
-    'mobile': <Initial1280 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data?.initial} setShowHeader={setShowHeader} />,
+    'mobile': <Initial768 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data?.initial} setShowHeader={setShowHeader} />,
     1280: <Initial1280 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data?.initial} setShowHeader={setShowHeader} />,
     1366: <Initial1366 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data?.initial} setShowHeader={setShowHeader} />,
     1440: <Initial1440 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data?.initial} setShowHeader={setShowHeader} />,
@@ -85,7 +84,7 @@ export const Home = () => {
       {!loading && !error &&
         <>
           {showHeader &&
-            <Header />
+            <Header showScroll={showScroll}/>
           }
           {SIZES_RES[newWidth]}
           <About text={data.about} />
