@@ -4,6 +4,7 @@ import { gsap } from 'gsap'
 import { useWindowSize } from "@uidotdev/usehooks"
 
 export const About = ({ text }) => {
+    const [showText, setShowText] = useState(false)
     const [showFooter, setShowFooter] = useState(false)
     const { width } = useWindowSize()
 
@@ -20,7 +21,6 @@ export const About = ({ text }) => {
                 },
             })
             gsap.to('.paragraphs', {
-                className: 'paragraphs animation',
                 scrollTrigger: {
                     trigger: '.about-container',
                     start: "top +=100vh",
@@ -28,6 +28,9 @@ export const About = ({ text }) => {
                     scrub: 0.5,
                     once: true
                 },
+                onComplete: () =>{
+                    setShowText(true)
+                }
             })
             gsap.to('.footer', {
                 opacity: '1',
@@ -54,7 +57,6 @@ export const About = ({ text }) => {
                 },
             })
             gsap.to('.paragraphs', {
-                className: 'paragraphs animation',
                 scrollTrigger: {
                     trigger: '#mobile-animation-about',
                     start: "top center",
@@ -62,6 +64,9 @@ export const About = ({ text }) => {
                     scrub: 0.5,
                     once: true
                 },
+                onComplete: () =>{
+                    setShowText(true)
+                }
             })
             gsap.to('.footer', {
                 opacity: '1',
@@ -105,7 +110,7 @@ export const About = ({ text }) => {
                             <h2 className='titles title'>{text.title}</h2>
                         </div>
                         <div className="paragraph">
-                            <p className='paragraphs'>{text.text}</p>
+                            <p className={`paragraphs ${showText ? 'animation' : ''}`}>{text.text}</p>
                         </div>
                     </div>
                     <div className="footer">
