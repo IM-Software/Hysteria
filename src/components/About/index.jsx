@@ -28,7 +28,7 @@ export const About = ({ text }) => {
                     scrub: 0.5,
                     once: true
                 },
-                onComplete: () =>{
+                onComplete: () => {
                     setShowText(true)
                 }
             })
@@ -45,8 +45,8 @@ export const About = ({ text }) => {
                     setShowFooter(true)
                 }
             })
-        }else{
-            gsap.to('.about-container', {
+        } else {
+            gsap.to('.about-container-mobile', {
                 display: 'flex',
                 scrollTrigger: {
                     trigger: '#mobile-animation-about',
@@ -64,7 +64,7 @@ export const About = ({ text }) => {
                     scrub: 0.5,
                     once: true
                 },
-                onComplete: () =>{
+                onComplete: () => {
                     setShowText(true)
                 }
             })
@@ -103,24 +103,47 @@ export const About = ({ text }) => {
                 {width < 768 &&
                     <div id='mobile-animation-about'></div>
                 }
-                <div className='about-container'>
-                    <div className="about-text">
-                        <div className="about-title">
-                            <h3>{text.titleSecondary}</h3>
-                            <h2 className='titles title'>{text.title}</h2>
+                {width > 768 ? (
+                    <div className='about-container'>
+                        <div className="about-text">
+                            <div className="about-title">
+                                <h3>{text.titleSecondary}</h3>
+                                <h2 className='titles title'>{text.title}</h2>
+                            </div>
+                            <div className="paragraph">
+                                <p className={`paragraphs ${showText ? 'animation' : ''}`}>{text.text}</p>
+                            </div>
                         </div>
-                        <div className="paragraph">
-                            <p className={`paragraphs ${showText ? 'animation' : ''}`}>{text.text}</p>
+                        <div className="footer">
+                            {showFooter &&
+                                <>
+                                    <p>Hysteria: powered by </p>
+                                    <a href="https://conspiracao.com.br" target='_blank'>Conspiração.</a>
+                                </>
+                            }
                         </div>
                     </div>
-                    <div className="footer">
-                        {showFooter &&
-                            <>
-                                <p>Hysteria: powered by </p>
-                                <a href="https://conspiracao.com.br" target='_blank'>Conspiração.</a>
-                            </>}
+                ) : (
+                    <div className='about-container-mobile'>
+                        <div className="about-text">
+                            <div className="about-title">
+                                <h3>{text.titleSecondary}</h3>
+                                <h2 className='titles title'>{text.title}</h2>
+                            </div>
+                            <div className="paragraph">
+                                <p className={`paragraphs ${showText ? 'animation' : ''}`}>{text.text}</p>
+                            </div>
+                        </div>
+                        <div className="footer">
+                            {showFooter &&
+                                <>
+                                    <p>Hysteria: powered by </p>
+                                    <a href="https://conspiracao.com.br" target='_blank'>Conspiração.</a>
+                                </>
+                            }
+                        </div>
                     </div>
-                </div>
+                )}
             </div>
         </>
     )
