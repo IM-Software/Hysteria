@@ -29,6 +29,8 @@ export const Home = () => {
 
   const { loading, error, data } = useQuery(HOME_QUERY)
 
+  console.log(data)
+
   if (error) {
     Swal.fire({
       icon: 'error',

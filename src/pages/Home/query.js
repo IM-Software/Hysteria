@@ -79,9 +79,6 @@ export const HOME_QUERY = `
     imageTop{
       url
     },
-    imageLeft{
-      url
-    },
     imageRight{
       url
     },
