@@ -140,7 +140,7 @@ export const Brandlab = ({ text, brands }) => {
             <div className="brandlab-video">
               <div className='video-circle'></div>
               <div className="video-circle-bottom"></div>
-              <video className='video-brandlab' muted loop src={text.videoUrl}></video>
+              <video className='video-brandlab' muted loop playsInline src={text.videoUrl}></video>
             </div>
           }
         </div>

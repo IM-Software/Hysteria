@@ -220,7 +220,7 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
                                         >
                                             <div className='project-img'>
                                                 {project.prevVideo &&
-                                                    <video className='outherproject-video' muted loop src={project?.prevVideo}
+                                                    <video className='outherproject-video' muted loop playsInline src={project?.prevVideo}
                                                         onMouseEnter={(e) => {
                                                             setTimeout(() => {
                                                                 e.target.play()

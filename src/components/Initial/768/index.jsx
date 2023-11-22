@@ -245,10 +245,10 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
                         <animated.div className="background-ball" style={{ ...background, borderRadius: showAnimationStart ? borderRadius : '0%', }}>
                             <animated.div className='videos-container' >
                                 <animated.div className="video-left" style={leftSlide}>
-                                    <video muted loop src={data.videoUrl} className='video video-initial'></video>
+                                    <video playsInline muted loop src={data.videoUrl} className='video video-initial'></video>
                                 </animated.div>
                                 <animated.div className="video-right" style={rightSlide}>
-                                    <video muted loop src={data.videoUrl} className='video video-initial'></video>
+                                    <video playsInline muted loop src={data.videoUrl} className='video video-initial'></video>
                                 </animated.div>
                             </animated.div>
                         </animated.div>
