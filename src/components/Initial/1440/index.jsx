@@ -138,16 +138,18 @@ export const Initial1440 = ({ showAnimationStart, setShowAnimationStart, showScr
                     end: 'top top',
                     scrub: 1,
                 },
-            })
-            gsap.to('.center-container', {
-                opacity: '0',
-                y: '-50vh',
-                scrollTrigger: {
-                    trigger: '#transition-logo-1',
-                    start: "top top",
-                    end: "top top",
-                    scrub: 1,
-                },
+                onComplete: () =>{
+                    gsap.to('.center-container', {
+                        opacity: '0',
+                        y: '-50vh',
+                        scrollTrigger: {
+                            trigger: '#transition-logo-1',
+                            start: "top top",
+                            end: "top top",
+                            scrub: 1,
+                        },
+                    })
+                }
             })
             gsap.to('.circle-top-1440', {
                 y: '84vh',

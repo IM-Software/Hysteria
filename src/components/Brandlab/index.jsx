@@ -20,7 +20,6 @@ export const Brandlab = ({ text, brands }) => {
     })
   }
 
-
   useEffect(() => {
     if (width > 768) {
       gsap.to('.brandlab-circle', {
@@ -45,34 +44,36 @@ export const Brandlab = ({ text, brands }) => {
           once: true,
         },
         onComplete: () => {
-          setShowTitle(true)
-          setShowVideo(true)
-          setTimeout(function () {
-            setShowParagraph(true)
-          }, 700)
+          if (window.innerWidth > 1000) {
+            setShowTitle(true)
+            setShowVideo(true)
+            setTimeout(function () {
+              setShowParagraph(true)
+            }, 700)
 
-          setTimeout(function () {
-            setShowTextSecondary(true)
-            playVideo()
-          }, 1000)
+            setTimeout(function () {
+              setShowTextSecondary(true)
+              playVideo()
+            }, 1000)
 
-          setShowBrands(true)
+            animationBrand()
 
-          gsap.to('.brandlab-circle', {
-            y: '-=50vh',
-            scrollTrigger: {
-              trigger: '.contact',
-              start: "top center",
-              end: 'top center',
-              scrub: 0.5,
-            },
-          })
+            gsap.to('.brandlab-circle', {
+              y: '-=50vh',
+              scrollTrigger: {
+                trigger: '.contact',
+                start: "top center",
+                end: 'top center',
+                scrub: 0.5,
+              },
+            })
+          }
         }
       })
     }
   }, [width])
 
-  const animationBrand = () =>{
+  const animationBrand = () => {
     setTimeout(function () {
       if (showBrands === false) {
         brands.map((_brand, index) => {
@@ -97,18 +98,20 @@ export const Brandlab = ({ text, brands }) => {
           once: true,
         },
         onStart: () => {
-          setShowTitle(true)
-          setShowVideo(true)
-          setTimeout(function () {
-            setShowParagraph(true)
-          }, 700)
+          if (window.innerWidth <= 1000) {
+            setShowTitle(true)
+            setShowVideo(true)
+            setTimeout(function () {
+              setShowParagraph(true)
+            }, 700)
 
-          animationBrand()
+            animationBrand()
 
-          setTimeout(function () {
-            setShowTextSecondary(true)
-            playVideo()
-          }, 1000)
+            setTimeout(function () {
+              setShowTextSecondary(true)
+              playVideo()
+            }, 1000)
+          }
         }
       })
     }

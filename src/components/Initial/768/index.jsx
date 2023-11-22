@@ -126,6 +126,18 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
                     end: 'top center',
                     scrub: 1,
                 },
+                onComplete: () =>{
+                    gsap.to('.center-container', {
+                        opacity: '0',
+                        y: '-=50vh',
+                        scrollTrigger: {
+                            trigger: '#transition-logo-1',
+                            start: "top top",
+                            end: "top top",
+                            scrub: 1,
+                        },
+                    })
+                }
             })
             gsap.to('.circle-top-768', {
                 y: `+=95vh`,
