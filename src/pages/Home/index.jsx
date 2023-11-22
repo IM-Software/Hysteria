@@ -54,7 +54,7 @@ export const Home = () => {
   
   const { width } = useWindowSize()
 
-  const isMobile = width <= 768
+  const isMobile = width <= 1000
 
   const newWidth = isMobile ? 'mobile' : accptedWidths.reduce((prev, curr) => {
     return (curr > width && curr < prev || curr === width ) ? curr : prev

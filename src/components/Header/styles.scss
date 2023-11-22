@@ -242,17 +242,17 @@ svg {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .header {
         div {
             img {
-                width: 150px;
-                height: 30px;
+                width: 250px;
+                height: 40px;
             }
 
             svg {
-                width: 20px;
-                height: 20px;
+                width: 30px;
+                height: 30px;
             }
 
             padding: 32px;
@@ -316,6 +316,21 @@ svg {
             p {
                 padding: 0px 0px;
                 font-size: 24px;
+            }
+        }
+    }
+}
+
+@media(max-width: 768px){
+    .header {
+        div{
+            img{
+                width: 150px;
+                height: 30px;
+            }
+            svg{
+                width: 20px;
+                height: 20px;
             }
         }
     }

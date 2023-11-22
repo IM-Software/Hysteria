@@ -640,8 +640,90 @@
     }
 }
 
+@media (min-height: 1310px) and (max-width: 1150px){
+    .collaborators{
+        .collaborators-text{
+            .sub-title{
+                .paragraph{
+                    margin-top: -350px !important;
+                }
+            }
+        }
+        .collaborators-background  {
+            .bigger-circle {
+                .smaller-circle {
+                    margin-top: 69% !important;
+                }
+            }
+        }
+    }
+}
 
-@media(max-width: 768px) {
+
+@media(max-width: 1150px){
+    .collaborators {
+        .collaborators-title {
+            margin-top: 24vh;
+            margin-left: 5px;
+        }
+
+        .collaborators-text {
+            .sub-title {
+                margin-top: 37vh;
+                .circles-images {
+                    margin-top: -21vh;
+
+                    .up {
+                        width: 407px;
+                        height: 407px;
+                        margin-top: -10px;
+                        margin-right: -10px;
+                    }
+
+                    .left {
+                        width: 224px;
+                        height: 224px;
+                        margin-right: 250px;
+                        margin-top: 150px;
+                    }
+
+                    .low {
+                        width: 174px;
+                        height: 174px;
+                        margin-right: 190px;
+                        margin-top: 240px;
+                    }
+                }
+
+                .paragraph {
+                    margin-top: -150px;
+                    p{
+                        margin-left: -20px;
+                        max-width: 400px;
+                    }
+                }
+
+            }
+        }
+
+        .collaborators-background  {
+            .bigger-circle {
+                width: 850px;
+                height: 850px;
+
+                .smaller-circle {
+                    width: 420px;
+                    height: 420px;
+                    margin-top: 64%;
+                    margin-left: -7vw;
+                }
+            }
+        }
+    }
+}
+
+
+@media(max-width: 1000px) {
     .collaborators {
         .collaborators-title {
             margin-top: 20vh;
@@ -746,6 +828,42 @@
     }
 }
 
+
+@media(max-width: 768px) {
+    .collaborators {
+        .collaborators-text {
+            .sub-title {
+                .paragraph {
+                    justify-content: right;
+                    align-items: right;
+                    margin-top: -100px;
+                    margin-bottom: 200px;
+                    p{
+                        width: 299px;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media (min-height: 1110px) and (max-width: 868px){
+    .collaborators{
+        .collaborators-title{
+            margin-top: 150px;
+        }
+        .collaborators-text{
+            margin-top: 70px;
+            .sub-title{
+                .circles-images{
+                    margin-top: -230px;
+                }
+            }
+        }
+    }
+}
+
 @media (max-height: 800px) and (max-width: 768px){
     .collaborators{
         .collaborators-title{
@@ -841,6 +959,36 @@
                     height: 240px;
                     margin-top: 56% !important;
                     margin-left: 7vw;
+                }
+            }
+        }
+    }
+}
+
+@media(min-height: 1100px) and (max-width: 968px){
+    .collaborators{
+        .collaborators-title{
+            h2{
+                width: 502px;
+            }
+        }
+        .collaborators-text{
+            .sub-title{
+                .circles-images{
+                    margin-top: -20vh;
+                }
+            }
+        }
+        .collaborators-background  {
+            .bigger-circle-mobile {
+                width: 936px;
+                height: 936px;
+
+                .smaller-circle-mobile {
+                    width: 330px;
+                    height: 330px;
+                    margin-top: 63% !important;
+                    margin-left: 2vw;
                 }
             }
         }

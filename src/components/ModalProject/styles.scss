@@ -793,6 +793,193 @@
     }
 }
 
+@media(max-width: 1000px) {
+    .modalproject {
+        .modal-header {
+            .mobile {
+                width: 100%;
+                display: flex;
+            }
+
+            .pc {
+                display: none;
+            }
+
+            div {
+                img {
+                    width: 150px;
+                    height: 40px;
+                }
+
+                padding: 32px;
+            }
+        }
+
+        h2 {
+            width: 100%;
+            font-size: 80px;
+        }
+
+        .project-modal {
+            height: auto;
+
+            .title {
+                display: flex;
+                position: relative;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                margin-left: 0px;
+            }
+
+            .project-about {
+                display: flex;
+                flex-direction: column-reverse;
+                margin-top: -16px;
+                margin-left: 0px;
+                height: 100%;
+
+                .image {
+                    overflow: visible;
+                    width: 200%;
+                    min-height: 604px;
+                    margin-left: -50%;
+                    pointer-events: none;
+
+                    img {
+                        min-height: 604px;
+                        object-position: center;
+                    }
+                }
+
+                .text {
+                    padding: 38px;
+                    margin-top: 0px;
+
+                    .stream {
+                        font-size: 24px;
+
+                        .line {
+                            height: 20px;
+                        }
+                    }
+
+                    .paragraph {
+                        font-size: 20px;
+                        line-height: 40px;
+
+                        p {
+                            width: 450px;
+                        }
+                    }
+
+                    .credits {
+                        flex-direction: column;
+                        width: none;
+
+                        .credit {
+                            gap: 12px;
+
+                            p {
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .gallery {
+            margin-top: 72px;
+
+            .video {
+                width: 100%;
+                height: 420px;
+
+                .play {
+                    width: 54px;
+                    height: 54px;
+
+                    svg {
+                        width: 80%;
+                        height: 80%;
+                        margin-left: 5px;
+                    }
+                }
+            }
+
+            .images {
+                height: auto;
+                flex-direction: column;
+
+                .image {
+                    width: 100%;
+                    height: 420px;
+                }
+            }
+
+            .middle {
+                width: 100%;
+                height: 420px;
+            }
+        }
+
+        .footer {
+            padding-top: 150px;
+            padding-left: 10px;
+            padding-right: 10px;
+
+            .title {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0;
+                text-align: center;
+                font-size: 80.367px;
+
+                .arrow-container {
+                    display: none;
+                }
+            }
+            .swiper-no-swiping {
+                touch-action: auto;
+            }
+
+            .outher-projects {
+                margin-top: -12px;
+                height: auto;
+                .swiper-wrapper {
+                    flex-direction: column;
+                }
+
+                .outher-project {
+                    width: 95vw !important;
+                    height: 410.314px;
+                    pointer-events: stroke !important; 
+                    .info {
+                        margin-top: -100px;
+                        padding-left: 20px;
+
+                        h3 {
+                            font-size: 32px;
+                        }
+
+                        .text-project {
+                            margin-top: 5px;
+                            .line{
+                                height: 15px;
+                            }
+                            p {
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media(max-width: 768px) {
     .modalproject {
         .modal-header {
@@ -980,7 +1167,25 @@
     }
 }
 
-@media(max-height: 768px){
+@media(max-width: 1000px){
+    .modalproject{
+        .modal-header{
+            div{
+                img {
+                    width: 250px;
+                    height: 40px;
+                }
+                
+                svg {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 768px){
     .modalproject{
         .modal-header{
             div{
@@ -994,5 +1199,5 @@
                 }
             }
         }
-    }
+    } 
 }

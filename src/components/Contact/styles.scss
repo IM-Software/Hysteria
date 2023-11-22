@@ -279,7 +279,16 @@
     }
 }
 
-@media(max-width: 768px){
+
+@media (max-width: 1150px){
+    .contact{
+        .text{
+            margin-top: -10vh;
+        }
+    }
+}
+
+@media(max-width: 1000px){
     .contact{
         display: flex;
         justify-content: center;
