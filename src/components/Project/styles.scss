@@ -7,11 +7,12 @@
     position: relative;
     opacity: 0;
     display: flex;
+    transform: translateY(300px);
+    transition: 1.2s ease-out;
 
     &.show {
-        border-radius: 50px;
         opacity: 1;
-        animation: move-project 1.2s ease-out;
+        transform: translateY(0px);
     }
 
     &:hover {
