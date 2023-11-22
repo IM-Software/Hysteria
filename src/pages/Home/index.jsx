@@ -29,8 +29,6 @@ export const Home = () => {
 
   const { loading, error, data } = useQuery(HOME_QUERY)
 
-  console.log(data)
-
   if (error) {
     Swal.fire({
       icon: 'error',
@@ -71,9 +69,6 @@ export const Home = () => {
     2560: <Initial2560 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data?.initial} setShowHeader={setShowHeader} />,
     3840: <Initial3840 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data?.initial} setShowHeader={setShowHeader} />,
   }
-
-  console.log(newWidth)
-  
 
   return (
     <div className="home">

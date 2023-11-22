@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './styles.scss'
 import { useSpring, animated, config } from 'react-spring'
 import Logo from '../../../assets/logo-black.png'
@@ -17,11 +17,18 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
 
     const [showCircles, setShowCircles] = useState(!showAnimationStart)
 
+    const videoRefs = [
+        useRef(null),
+        useRef(null),
+        useRef(null),
+    ]
+
 
     const playAllVideos = () => {
-        const videos = document.querySelectorAll('.video-initial')
-        videos.forEach((video) => {
-            video.play()
+        videoRefs.forEach((ref) => {
+            if (ref.current) {
+              ref.current.play()
+            }
         })
     }
 
@@ -234,7 +241,7 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
                         transform: showAnimationStart ? `scale(${scale})` : 'scale(1)',
                     }}>
                         <div className="circle" >
-                            <video playsInline muted loop src={data.videoUrl} className='video video-initial'></video>
+                            <video ref={videoRefs[2]} playsInline muted loop src={data.videoUrl} className='video video-initial'></video>
                         </div>
                     </div>
                 </animated.div>
@@ -245,10 +252,10 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
                         <animated.div className="background-ball" style={{ ...background, borderRadius: showAnimationStart ? borderRadius : '0%', }}>
                             <animated.div className='videos-container' >
                                 <animated.div className="video-left" style={leftSlide}>
-                                    <video playsInline muted loop src={data.videoUrl} className='video video-initial'></video>
+                                    <video ref={videoRefs[0]} playsInline muted loop src={data.videoUrl} className='video video-initial'></video>
                                 </animated.div>
                                 <animated.div className="video-right" style={rightSlide}>
-                                    <video playsInline muted loop src={data.videoUrl} className='video video-initial'></video>
+                                    <video ref={videoRefs[1]} playsInline muted loop src={data.videoUrl} className='video video-initial'></video>
                                 </animated.div>
                             </animated.div>
                         </animated.div>
