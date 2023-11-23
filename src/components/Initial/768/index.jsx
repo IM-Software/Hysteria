@@ -122,9 +122,8 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
             gsap.to('.center-container', {
                 position: 'fixed',
                 y: `+=48vh`,
-                x: '-14vw',
+                x: '-=14vw',
                 scale: 1.218,
-                ease: 'power1.easeInOut',
                 transition: 'none',
                 opacity: '1',
                 scrollTrigger: {
@@ -137,7 +136,6 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
                 onComplete: () =>{
                     gsap.to('.center-container', {
                         opacity: '0',
-                        y: '-=50vh',
                         scrollTrigger: {
                             trigger: '.list-project',
                             start: "center center",
