@@ -126,6 +126,7 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
                 scale: 1.218,
                 ease: 'power1.easeInOut',
                 transition: 'none',
+                opacity: '1',
                 scrollTrigger: {
                     trigger: '.animation-start',
                     start: "top center",
@@ -138,9 +139,9 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
                         opacity: '0',
                         y: '-=50vh',
                         scrollTrigger: {
-                            trigger: '#transition-logo-1',
-                            start: "top top",
-                            end: "top top",
+                            trigger: '.list-project',
+                            start: "center center",
+                            end: 'center center',
                             scrub: 1,
                         },
                     })
@@ -152,6 +153,7 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
                 scale: 0.945,
                 position: 'fixed',
                 transition: 'none',
+                visibility: 'visible',
                 scrollTrigger: {
                     trigger: '.animation-start',
                     start: "top center",
@@ -177,6 +179,7 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
                 scale: 0.945,
                 position: 'fixed',
                 transition: 'none',
+                visibility: 'visible',
                 scrollTrigger: {
                     trigger: '.animation-start',
                     start: "top center",
