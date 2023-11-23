@@ -21,7 +21,7 @@ export const Header = ({showScroll}) => {
             setDisableAnchors(true)
             const projectsSecition = document.getElementById('projects')
             const targetOffset = projectsSecition.offsetTop
-            if (sectionId === 'brandlab-navigation' && window.scrollY < targetOffset) {
+            if (sectionId === 'brandlab-navigation' && window.scrollY < targetOffset && window.innerWidth >= 900) {
                 const aboutSection = document.getElementById('about')
                 aboutSection.scrollIntoView()
                 setTimeout(function () {
