@@ -1,12 +1,10 @@
 import './styles.scss'
-import LogoWhite from '../../assets/logo-white.png'
 import { useState, useRef, useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useSpring, animated } from 'react-spring'
 import { ModalVideo } from '../ModalVideo'
-import LogoMobile from '../../assets/logo-mobile.png'
 
-export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleModal, showScroll, projects }) => {
+export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleModal, showScroll, projects, headerImgs }) => {
     const [indexCurrent, setIndexCurrent] = useState(index)
     const modalRef = useRef(null)
     const [showContent, setShowContent] = useState(false)
@@ -85,8 +83,8 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
         <animated.div style={moveUp} className={`modalproject ${showModal ? 'background' : ''}`} ref={modalRef}>
             <div className='modal-header'>
                 <div>
-                    <img className='pc' src={LogoWhite} alt="logo" />
-                    <img className='mobile' src={LogoMobile} alt="logo" />
+                    <img className='pc' src={headerImgs.logoPc.url} alt="logo" />
+                    <img className='mobile' src={headerImgs.logoMobile.url} alt="logo" />
                 </div>
                 <div>
                     <svg onClick={() => closeModal()} xmlns="http://www.w3.org/2000/svg" width="23" height="21" viewBox="0 0 23 21" fill="none">

@@ -1,10 +1,8 @@
 import './styles.scss'
-import LogoWhite from '../../assets/logo-white.png'
-import LogoMobile from '../../assets/logo-mobile.png'
 import { useState } from 'react'
 
 
-export const Header = ({showScroll}) => {
+export const Header = ({showScroll, data}) => {
     const [showMenu, setShowMenu] = useState(false)
     const [disableAnchors, setDisableAnchors] = useState(false)
 
@@ -64,8 +62,8 @@ export const Header = ({showScroll}) => {
             </header>
             <header className='header'>
                 <div>
-                    <img href='#home' className='pc' onClick={toggleMenu} src={LogoWhite} alt="logo" />
-                    <img href='#home' className='mobile' onClick={toggleMenu} src={LogoMobile} alt="logo" />
+                    <img href='#home' className='pc' onClick={toggleMenu} src={data.logoPc.url} alt="logo" />
+                    <img href='#home' className='mobile' onClick={toggleMenu} src={data.logoMobile.url} alt="logo" />
                 </div>
                 <div>
                     {!showMenu ? (

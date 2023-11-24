@@ -1,5 +1,13 @@
 export const HOME_QUERY = `
 {
+  headerImg{
+    logoPc{
+      url
+    },
+    logoMobile{
+      url
+    }
+  },
   initial{
     videoUrl,
     textUp,
@@ -9,7 +17,8 @@ export const HOME_QUERY = `
   about {
     text,
     titleSecondary,
-    title
+    title,
+    conspiracaoLink
   },
   allBrands {
     name,

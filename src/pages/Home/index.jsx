@@ -29,6 +29,8 @@ export const Home = () => {
 
   const { loading, error, data } = useQuery(HOME_QUERY)
 
+  console.log(data)
+
   if (error) {
     Swal.fire({
       icon: 'error',
@@ -81,12 +83,12 @@ export const Home = () => {
       {!loading && !error &&
         <>
           {showHeader &&
-            <Header showScroll={showScroll}/>
+            <Header showScroll={showScroll} data={data.headerImg}/>
           }
           {SIZES_RES[newWidth]}
           <About text={data.about} />
           <TransitionLogo id={1} data={data.transitionOne} />
-          <Projects showScroll={showScroll} projects={data.allProjects} />
+          <Projects showScroll={showScroll} projects={data.allProjects}  headerImgs={data.headerImg}/>
           <Brandlab showScroll={showScroll} text={data.brandlab} brands={data.allBrands} />
           <TransitionLogo id={2} data={data.transitionTwo} />
           <Collaborators showScroll={showScroll} text={data.collaborator} />

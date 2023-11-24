@@ -138,7 +138,7 @@ export const About = ({ text }) => {
                             {showFooter &&
                                 <>
                                     <p>Hysteria: powered by </p>
-                                    <a href="https://conspiracao.com.br" target='_blank'>Conspiração.</a>
+                                    <a href={text.conspiracaoLink} target='_blank'>Conspiração.</a>
                                 </>
                             }
                         </div>
