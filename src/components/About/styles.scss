@@ -1,12 +1,12 @@
 .about {
     width: 100%;
-    min-height: 110vh;
+    min-height: 100vh;
     color: var(--color-text-primary);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    position: sticky;
+    position: relative;
     top: 0;
     z-index: 20;
 
@@ -17,6 +17,7 @@
 
     .about-container, .about-container-mobile {
         width: 100%;
+        margin-top: 1%;
         min-height: 110vh;
         display: none;
         justify-content: center;
@@ -397,7 +398,7 @@
 @media(max-width: 1000px){
     .about {
         display: flex;
-        justify-content: start;
+        justify-content: center;
         align-items: left;
         padding-bottom: 200px;
         min-height: 100vh;
@@ -455,7 +456,7 @@
 @media (max-width: 768px) {
     .about {
         display: flex;
-        justify-content: start;
+        justify-content: center;
         align-items: left;
         padding-bottom: 200px;
         min-height: 100vh;

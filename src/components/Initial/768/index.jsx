@@ -120,8 +120,7 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
             })
 
             gsap.to('.center-container', {
-                position: 'fixed',
-                y: `+=48vh`,
+                y: `+=166vh`,
                 x: '-=14vw',
                 scale: 1.218,
                 transition: 'none',
@@ -130,72 +129,37 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
                     trigger: '.animation-start',
                     start: "top center",
                     endTrigger: '.about',
-                    end: 'top center',
+                    end: 'center center',
                     scrub: 1,
                 },
-                onComplete: () =>{
-                    gsap.to('.center-container', {
-                        opacity: '0',
-                        scrollTrigger: {
-                            trigger: '.list-project',
-                            start: "center center",
-                            end: 'center center',
-                            scrub: 1,
-                        },
-                    })
-                }
             })
             gsap.to('.circle-top-768', {
-                y: `+=95vh`,
+                y: `+=214vh`,
                 x: '-=27vw',
                 scale: 0.945,
-                position: 'fixed',
                 transition: 'none',
                 visibility: 'visible',
                 scrollTrigger: {
                     trigger: '.animation-start',
                     start: "top center",
                     endTrigger: '.about',
-                    end: 'top center',
+                    end: 'center center',
                     scrub: 1,
                 },
-                onComplete: () => {
-                    gsap.to('.circle-top-768', {
-                        visibility: 'hidden',
-                        scrollTrigger: {
-                            trigger: '.list-project',
-                            start: "center center",
-                            end: 'center center',
-                            scrub: 1,
-                        },
-                    })
-                }
             })
             gsap.to('.circle-bottom-768', {
-                y: `-=7vh`,
+                y: `+=111vh`,
                 x: '-=48vw',
                 scale: 0.945,
-                position: 'fixed',
                 transition: 'none',
                 visibility: 'visible',
                 scrollTrigger: {
                     trigger: '.animation-start',
                     start: "top center",
                     endTrigger: '.about',
-                    end: 'top center',
+                    end: 'center center',
                     scrub: 1,
                 },
-                onComplete: () => {
-                    gsap.to('.circle-bottom-768', {
-                        visibility: 'hidden',
-                        scrollTrigger: {
-                            trigger: '.list-project',
-                            start: "center center",
-                            end: 'center center',
-                            scrub: 1,
-                        },
-                    })
-                }
             })
         }
     }, [showCircles])

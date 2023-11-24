@@ -65,7 +65,7 @@ table {
 }
 
 html{
-	overflow-x: clip;
+	overflow-x: hidden;
 	max-width: 100vw;
 	font-family: var(--font-primary);
 }
@@ -75,7 +75,7 @@ html ::-webkit-scrollbar {
 }
 
 body{
-	overflow-x: clip;
+	overflow-x: hidden;
 	max-width: 100vw;
 	background-color: var(--bg-color-primary);
 	scrollbar-width: none;

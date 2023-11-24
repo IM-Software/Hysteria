@@ -125,8 +125,7 @@ export const Initial1280 = ({  showAnimationStart, setShowAnimationStart, showSc
             })
 
             gsap.to('.center-container', {
-                position: 'fixed',
-                y: '3vh',
+                y: '105vh',
                 x: '-38vw',
                 ease: 'power1.easeInOut',
                 transition: 'none',
@@ -137,18 +136,6 @@ export const Initial1280 = ({  showAnimationStart, setShowAnimationStart, showSc
                     end: 'top top',
                     scrub: 1,
                 },
-                onComplete: () =>{
-                    gsap.to('.center-container', {
-                        opacity: '0',
-                        y: '-50vh',
-                        scrollTrigger: {
-                            trigger: '#transition-logo-1',
-                            start: "top top",
-                            end: "top top",
-                            scrub: 1,
-                        },
-                    })
-                }
             })
             gsap.to('.circle-top-1280', {
                 y: '86vh',

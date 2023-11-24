@@ -1,11 +1,10 @@
 .brandlab {
     width: 100vw;
-    height: 150vh;
+    height: 100vh;
     display: flex;
-    overflow: hidden;
     background-color: var(--bg-color-primary);
     justify-content: center;
-    position: sticky;
+    position: relative;
     top: 0;
     z-index: 20;
     align-items: center;
@@ -21,7 +20,7 @@
         justify-content: center;
         align-items: center;
         position: absolute;
-        margin-top: -100vh;
+        margin-top: -30vh;
         transition: transform ease-in-out;
     }
 
@@ -33,7 +32,7 @@
         z-index: 50;
         justify-content: center;
         align-items: center;
-        margin-top: -100vh;
+        margin-top: -23vh;
 
         .texts {
             display: flex;
@@ -230,10 +229,11 @@
         .brandlab-circle {
             width: 3450px;
             height: 3450px;
-            margin-top: -90vh;
+            margin-top: -30vh;
         }
 
         .front {
+            margin-top: -40vh;
             .texts {
                 margin-top: 40vh;
                 margin-left: 7vw;
@@ -254,7 +254,7 @@
                     margin-top: 20px;
                     gap: 50px;
                     scale: 2;
-                    margin-left: 33vw;
+                    margin-left: 26.5vw;
                 }
             }
 
@@ -273,7 +273,7 @@
         .brandlab-circle {
             width: 2450px;
             height: 2450px;
-            margin-top: -70vh;
+            margin-top: 0vh;
             transform: translate3d(-10vh);
         }
 
@@ -386,10 +386,11 @@
         .brandlab-circle {
             width: 1370px;
             height: 1370px;
-            margin-top: -116vh;
+            margin-top: -36vh;
         }
 
         .front {
+            margin-top: -10vh;
             .texts {
                 margin-left: 5.5vw;
                 margin-top: 150px;
@@ -422,13 +423,14 @@
         .brandlab-circle {
             width: 1270px;
             height: 1270px;
-            margin-top: -126vh;
+            margin-top: -26vh;
         }
 
         .front {
+            margin-top: 0vh;
             .texts {
+                margin-top: 20vh;
                 margin-left: 7.5vw;
-                margin-top: 75px;
 
                 h3 {
                     font-size: 14px;
@@ -456,7 +458,6 @@
         .brandlab-circle {
             width: 1180px;
             height: 1180px;
-            margin-top: -126vh;
         }
 
         .front {
@@ -518,7 +519,7 @@
         }
 
         .front {
-            margin-top: -65.5vh;
+            margin-top: -35.5vh;
 
             .texts {
                 margin-left: 0px;
@@ -694,7 +695,7 @@
         }
 
         .front {
-            margin-top: -60vh;
+            margin-top: -30vh;
 
             .texts {
                 h3 {
