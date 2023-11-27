@@ -83,21 +83,12 @@ export const HOME_QUERY = `
     textSecondary,
     videoUrl
   },
-  collaborator{
-    text,
-    imageTop{
-      url
-    },
-    imageLeft{
-      url
-    },
-    imageRight{
-      url
-    },
-    imageLow{
-      url
-    }
-  }
+  collaborator {
+    text
+    videoTop,
+    videoLow,
+    videoLeft
+  },
   contact{
   	email,
     youtubeLink,

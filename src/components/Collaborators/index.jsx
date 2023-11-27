@@ -9,8 +9,15 @@ export const Collaborators = ({ text }) => {
 
     const { width } = useWindowSize()
 
+    const playAllVideos = () => {
+        const videos = document.querySelectorAll('.video-collaborator')
+        videos.forEach((video) => {
+            video.play()
+        })
+    }
+
     useEffect(() => {
-        if(width > 768){
+        if (width > 768) {
             gsap.to('.bigger-circle', {
                 y: '0vh',
                 x: '0vw',
@@ -66,7 +73,7 @@ export const Collaborators = ({ text }) => {
                     })
                 }
             })
-    
+
             gsap.to('.collaborators', {
                 scrollTrigger: {
                     trigger: '#transition-img-2',
@@ -78,6 +85,7 @@ export const Collaborators = ({ text }) => {
                     setShowTitle(true)
                     setTimeout(() => {
                         setShowText(true)
+                        playAllVideos()
                     }, 500)
                 }
             })
@@ -86,7 +94,7 @@ export const Collaborators = ({ text }) => {
     }, [width])
 
     useEffect(() => {
-        if(width <= 768){
+        if (width <= 768) {
             gsap.to('.bigger-circle-mobile', {
                 y: '0vh',
                 x: '0vw',
@@ -99,9 +107,10 @@ export const Collaborators = ({ text }) => {
                 },
                 onComplete: () => {
                     gsap.to('.bigger-circle-mobile', {
-                        y: '102vh',
-                        x: '-63vw',
-                        scale: 0.849,
+                        width: '599.026px',
+                        height: '599.026px',
+                        y: '70vh',
+                        x: '-15vw',
                         scrollTrigger: {
                             trigger: '.circles-images',
                             start: "center center",
@@ -122,8 +131,10 @@ export const Collaborators = ({ text }) => {
                 },
                 onComplete: () => {
                     gsap.to('.smaller-circle-mobile', {
-                        x: '8.5vw',
-                        y: '-136%',
+                        width: '325.485px',
+                        height: '325.485px',
+                        x: '0.5vw',
+                        y: '-7%',
                         scrollTrigger: {
                             trigger: '.circles-images',
                             start: "center center",
@@ -143,7 +154,7 @@ export const Collaborators = ({ text }) => {
                     })
                 }
             })
-    
+
             gsap.to('.collaborators', {
                 scrollTrigger: {
                     trigger: '#transition-img-2',
@@ -155,6 +166,7 @@ export const Collaborators = ({ text }) => {
                     setShowTitle(true)
                     setTimeout(() => {
                         setShowText(true)
+                        playAllVideos()
                     }, 500)
                 }
             })
@@ -173,10 +185,10 @@ export const Collaborators = ({ text }) => {
                 <div className="collaborators-text">
                     <div className="sub-title">
                         <div className='circles-images'>
-                            <div className={`up ${showText ? 'show' : ''}`} style={{ backgroundImage: `url(${text.imageTop.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
-                            </div>
-                            <div className={`left ${showText ? 'show' : ''}`} style={{ backgroundImage: `url(${text.imageLeft.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}></div>
-                            <div className={`low ${showText ? 'show' : ''}`} style={{ backgroundImage: `url(${text.imageLow.url})`, backgroundColor: 'lightgray', backgroundPosition: '50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}></div>
+                            <video className={`up video-collaborator  ${showText ? 'show' : ''}`} src={text.videoTop}>
+                            </video>
+                            <video className={`left video-collaborator  ${showText ? 'show' : ''}`} src={text.videoLeft}></video>
+                            <video className={`low video-collaborator ${showText ? 'show' : ''}`} src={text.videoLow} ></video>
                         </div>
                         <div className='paragraph'>
                             <p className={`paragraphs ${showText ? 'show' : ''}`}>{text.text}</p>
@@ -190,11 +202,13 @@ export const Collaborators = ({ text }) => {
                         <div className='background-blur'></div>
                     </div>
                 </div>
-                <div className='bigger-circle-mobile'>
-                    <div className="smaller-circle-mobile">
-                        <div className='background-blur-mobile'></div>
+                {width <= 900 &&
+                    <div className='bigger-circle-mobile'>
+                        <div className="smaller-circle-mobile">
+                            <div className='background-blur-mobile'></div>
+                        </div>
                     </div>
-                </div>
+                }
             </div>
         </div>
     )
