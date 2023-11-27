@@ -185,10 +185,10 @@ export const Collaborators = ({ text }) => {
                 <div className="collaborators-text">
                     <div className="sub-title">
                         <div className='circles-images'>
-                            <video className={`up video-collaborator  ${showText ? 'show' : ''}`} src={text.videoTop}>
+                            <video playsInline muted loop className={`up video-collaborator  ${showText ? 'show' : ''}`} src={text.videoTop}>
                             </video>
-                            <video className={`left video-collaborator  ${showText ? 'show' : ''}`} src={text.videoLeft}></video>
-                            <video className={`low video-collaborator ${showText ? 'show' : ''}`} src={text.videoLow} ></video>
+                            <video playsInline muted loop className={`left video-collaborator  ${showText ? 'show' : ''}`} src={text.videoLeft}></video>
+                            <video playsInline muted loop className={`low video-collaborator ${showText ? 'show' : ''}`} src={text.videoLow} ></video>
                         </div>
                         <div className='paragraph'>
                             <p className={`paragraphs ${showText ? 'show' : ''}`}>{text.text}</p>
