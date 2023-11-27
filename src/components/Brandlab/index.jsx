@@ -57,16 +57,6 @@ export const Brandlab = ({ text, brands }) => {
             }, 1000)
 
             animationBrand()
-
-            gsap.to('.brandlab-circle', {
-              y: '-=50vh',
-              scrollTrigger: {
-                trigger: '.contact',
-                start: "top center",
-                end: 'top center',
-                scrub: 0.5,
-              },
-            })
           }
         }
       })

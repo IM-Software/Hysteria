@@ -224,6 +224,7 @@
 
 @media(max-width: 1370px){
     .contact{
+        min-height: 110vh;
         margin-top: 6vh;
         .text{
             div {
@@ -249,6 +250,7 @@
 
 @media(max-width: 1290px){
     .contact{
+        min-height: 120vh;
         margin-top: 15vh;
         .text{
             margin-left: 23px;
@@ -293,6 +295,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        min-height: 100vh;
         margin-top: 0vh;
         .text{
             margin-top: 30%;
