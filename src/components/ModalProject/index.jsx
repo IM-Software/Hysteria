@@ -4,12 +4,11 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { useSpring, animated } from 'react-spring'
 import { ModalVideo } from '../ModalVideo'
 
-export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleModal, showScroll, projects, headerImgs }) => {
+export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleModal, showScroll, projects, changeFunctionHeader }) => {
     const [indexCurrent, setIndexCurrent] = useState(index)
     const modalRef = useRef(null)
     const [showContent, setShowContent] = useState(false)
     const [showVideo, setShowVideo] = useState(false)
-    const [disabledButton, setDisabledButton] = useState(false)
 
     const [currentIndex, setCurrentIndex] = useState(0)
     const maxSlide = (projects.length / 2) - 1
@@ -25,22 +24,28 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
     }
 
     const closeModal = () => {
-        if (!disabledButton) {
-            if (!showVideo) {
-                toggleModal(false)
-                showScroll((prev) => !prev)
-                setShowContent(showModal)
-            } else {
-                setDisabledButton(true)
-                setTimeout(() => {
-                    setShowVideo(false)
-                }, 50)
-                setTimeout(() => {
-                    setDisabledButton(false)
-                }, 1000)
-            }
-        }
+        toggleModal(false)
+        showScroll((prev) => !prev)
+        setShowContent(showModal)
     }
+
+    const closeModalVideo = () => {
+        setShowVideo(false)
+    }
+
+    useEffect(() => {
+        if (showModal && !showVideo) {
+            changeFunctionHeader(closeModal)
+        }
+
+        if (showModal && showVideo) {
+            changeFunctionHeader(closeModalVideo)
+        }
+
+        if (!showModal && !showVideo) {
+            changeFunctionHeader(null)
+        }
+    }, [showModal, showVideo])
 
     const moveUp = useSpring({
         translateY: !showModal ? '100vh' : '0vh',
@@ -81,21 +86,9 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
 
     return (
         <animated.div style={moveUp} className={`modalproject ${showModal ? 'background' : ''}`} ref={modalRef}>
-            <div className='modal-header'>
-                <div>
-                    <img className='pc' src={headerImgs.logoPc.url} alt="logo" />
-                    <img className='mobile' src={headerImgs.logoMobile.url} alt="logo" />
-                </div>
-                <div>
-                    <svg onClick={() => closeModal()} xmlns="http://www.w3.org/2000/svg" width="23" height="21" viewBox="0 0 23 21" fill="none">
-                        <path d="M2 2L20 19" stroke="white" stroke-width="3" stroke-linecap="round" />
-                        <path d="M2 19L20 2" stroke="white" stroke-width="3" stroke-linecap="round" />
-                    </svg>
-                </div>
-            </div>
             {showContent &&
                 <>
-                    <ModalVideo showVideo={showVideo} videoUrl={projects[index].videourl} showModal={setShowVideo} />
+                    <ModalVideo showVideo={showVideo} videoUrl={projects[index].videourl} />
                     <div className='project-modal'>
                         <div className="title">
                             <h2>{projects[indexCurrent].name}</h2>
@@ -206,10 +199,10 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
                             </div>
                         </div>
                         <Swiper
-                            slidesPerView={2} 
+                            slidesPerView={2}
                             className="outher-projects swiper-no-swiping"
                             ref={swiperRef}
-                            onlyExternal={true} 
+                            onlyExternal={true}
                         >
                             {projects.map((project, indexProject) => {
                                 if (indexProject !== indexCurrent) {

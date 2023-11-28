@@ -1,20 +1,30 @@
 import './styles.scss'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 
-export const Header = ({showScroll, data}) => {
+export const Header = ({ showScroll, data, headerFunction }) => {
     const [showMenu, setShowMenu] = useState(false)
     const [disableAnchors, setDisableAnchors] = useState(false)
+
+    const [iconClose, setIconClose] = useState(false)
 
     const toggleMenu = () => {
         setShowMenu((prev) => !prev)
         showScroll(showMenu)
     }
 
+    useEffect(() =>{
+        if(showMenu === true || (typeof headerFunction === 'function')){
+            setIconClose(true)
+        }else{
+            setIconClose(false)
+        }
+    },[headerFunction, showMenu])
+
 
     const scrollToSection = (sectionId) => {
         const section = document.getElementById(sectionId)
-        
+
         if (section && disableAnchors === false) {
             setDisableAnchors(true)
             const projectsSecition = document.getElementById('projects')
@@ -62,18 +72,18 @@ export const Header = ({showScroll, data}) => {
             </header>
             <header className='header'>
                 <div>
-                    <img href='#home' className='pc' onClick={toggleMenu} src={data.logoPc.url} alt="logo" />
-                    <img href='#home' className='mobile' onClick={toggleMenu} src={data.logoMobile.url} alt="logo" />
+                    <img href='#home' className='pc' src={data.logoPc.url} alt="logo" />
+                    <img href='#home' className='mobile' src={data.logoMobile.url} alt="logo" />
                 </div>
                 <div>
-                    {!showMenu ? (
-                        <svg onClick={toggleMenu} xmlns="http://www.w3.org/2000/svg" width="26" height="19" viewBox="0 0 26 19" fill="none">
+                    {!iconClose ? (
+                        <svg onClick={headerFunction ? headerFunction : toggleMenu} xmlns="http://www.w3.org/2000/svg" width="26" height="19" viewBox="0 0 26 19" fill="none">
                             <path d="M1.5 1.5H24" stroke="white" stroke-width="3" stroke-linecap="round" />
                             <path d="M1.5 9.5H24" stroke="white" stroke-width="3" stroke-linecap="round" />
                             <path d="M1.5 17.5H24" stroke="white" stroke-width="3" stroke-linecap="round" />
                         </svg>
                     ) : (
-                        <svg onClick={toggleMenu} xmlns="http://www.w3.org/2000/svg" width="23" height="21" viewBox="0 0 23 21" fill="none">
+                        <svg onClick={headerFunction ? headerFunction : toggleMenu} xmlns="http://www.w3.org/2000/svg" width="23" height="21" viewBox="0 0 23 21" fill="none">
                             <path d="M2 2L20 19" stroke="white" stroke-width="3" stroke-linecap="round" />
                             <path d="M2 19L20 2" stroke="white" stroke-width="3" stroke-linecap="round" />
                         </svg>

@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: space-between;
     position: fixed;
-    z-index: 100;
+    z-index: 1000;
     width: 100vw;
     pointer-events: none;
     animation: move-down 1s ease-in-out forwards;

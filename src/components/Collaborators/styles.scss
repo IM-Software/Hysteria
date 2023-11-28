@@ -61,7 +61,7 @@
                     height: 100%;
                     object-fit: cover;
                     object-position: center;
-                    opacity: 0.90;
+                    opacity: 0.7;
                 }
 
                 .up {
@@ -72,7 +72,7 @@
                     opacity: 0;
 
                     &.show {
-                        opacity: 0.90;
+                        opacity: 0.70;
                         transition: opacity 1s ease-in;
                         animation: move-images 1s ease-in-out;
                     }
@@ -88,7 +88,7 @@
                     opacity: 0;
 
                     &.show {
-                        opacity: 0.90;
+                        opacity: 0.70;
                         transition: opacity 1s ease-in;
                         animation: move-images 1.1s ease-in-out;
                     }
@@ -104,7 +104,7 @@
                     z-index: 10;
 
                     &.show {
-                        opacity: 0.90;
+                        opacity: 0.70;
                         transition: opacity 1s ease-in;
                         animation: move-images 1.2s ease-in-out;
                     }

@@ -2,7 +2,7 @@ import { Header } from '../../components/Header'
 import { Initial1366 } from '../../components/Initial/1366'
 import { Projects } from '../../components/ListProjects'
 import './styles.scss'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Brandlab } from '../../components/Brandlab'
 import { Collaborators } from '../../components/Collaborators'
 import { About } from '../../components/About'
@@ -28,6 +28,12 @@ export const Home = () => {
   const [showAnimationStart, setShowAnimationStart] = useState(true)
 
   const { loading, error, data } = useQuery(HOME_QUERY)
+
+  const [headerFunction, setHeaderFunction] = useState(null)
+
+  const changeFunctionHeader = (functionHeader) =>{
+    setHeaderFunction(() => functionHeader)
+  }
 
   if (error) {
     Swal.fire({
@@ -81,12 +87,12 @@ export const Home = () => {
       {!loading && !error &&
         <>
           {showHeader &&
-            <Header showScroll={showScroll} data={data.headerImg}/>
+            <Header showScroll={showScroll} data={data.headerImg} headerFunction={headerFunction}/>
           }
           {SIZES_RES[newWidth]}
           <About text={data.about} />
           <TransitionLogo id={1} data={data.transitionOne} />
-          <Projects showScroll={showScroll} projects={data.allProjects}  headerImgs={data.headerImg}/>
+          <Projects showScroll={showScroll} projects={data.allProjects} changeFunctionHeader={changeFunctionHeader}/>
           <Brandlab showScroll={showScroll} text={data.brandlab} brands={data.allBrands} />
           <TransitionLogo id={2} data={data.transitionTwo} />
           <Collaborators showScroll={showScroll} text={data.collaborator} />

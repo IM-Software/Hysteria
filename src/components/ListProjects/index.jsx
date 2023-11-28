@@ -4,7 +4,7 @@ import { ModalProject } from '../ModalProject'
 import { Project } from '../Project'
 import { gsap } from 'gsap'
 
-export const Projects = ({ showScroll, projects, headerImgs }) => {
+export const Projects = ({ showScroll, projects, changeFunctionHeader }) => {
   const [showModal, setShowModal] = useState(false)
   const [selectedProject, setSelectedProject] = useState(0)
   const sortedProjects = [...projects].sort((a, b) => a.gridPosition - b.gridPosition)
@@ -106,7 +106,7 @@ export const Projects = ({ showScroll, projects, headerImgs }) => {
           ))}
         </div>
       </div>
-      <ModalProject index={selectedProject} setSelectedProject={setSelectedProject} showModal={showModal} toggleModal={setShowModal} showScroll={showScroll} projects={sortedProjects} headerImgs={headerImgs}/>
+      <ModalProject index={selectedProject} setSelectedProject={setSelectedProject} showModal={showModal} toggleModal={setShowModal} showScroll={showScroll} projects={sortedProjects} changeFunctionHeader={changeFunctionHeader}/>
     </>
   )
 }
