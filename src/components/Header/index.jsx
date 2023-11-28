@@ -59,11 +59,11 @@ export const Header = ({ showScroll, data, headerFunction }) => {
                     </div>
                 </div>
                 <nav className="menu-items">
-                    <a onClick={() => scrollToSection('home')}>home</a>
-                    <a onClick={() => scrollToSection('about')}>quem é hysteria</a>
-                    <a onClick={() => scrollToSection('projects')}>projetos</a>
-                    <a onClick={() => scrollToSection('brandlab-navigation')}>brand lab</a>
-                    <a onClick={() => scrollToSection('contact')}>contato</a>
+                    <p onClick={() => scrollToSection('home')}>home</p>
+                    <p onClick={() => scrollToSection('about')}>quem é hysteria</p>
+                    <p onClick={() => scrollToSection('projects')}>projetos</p>
+                    <p onClick={() => scrollToSection('brandlab-navigation')}>brand lab</p>
+                    <p onClick={() => scrollToSection('contact')}>contato</p>
                 </nav>
                 <div className="menu-footer">
                     <p>política de privacidade</p>

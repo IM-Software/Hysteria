@@ -55,7 +55,7 @@ svg {
         flex-direction: column;
         gap: 10px;
 
-        a {
+        p {
             font-size: 128px;
             font-style: normal;
             font-weight: 400;
@@ -65,11 +65,7 @@ svg {
             text-decoration: none;
         }
 
-        a:visited {
-            color: var(--color-text-third);
-        }
-
-        a:hover {
+        p:hover {
             color: white;
             transition: 0.5s;
         }
@@ -151,7 +147,7 @@ svg {
             padding-left: 82px;
             gap: 50px;
 
-            a {
+            p {
                 font-size: 240px;
             }
         }
@@ -171,7 +167,7 @@ svg {
             margin-top: 10px;
             gap: 10px;
 
-            a {
+            p {
                 font-size: 112px;
             }
         }
@@ -187,7 +183,7 @@ svg {
 @media (max-height: 900px) {
     .menu {
         .menu-items {
-            a {
+            p {
                 font-size: 88px;
             }
         }
@@ -200,7 +196,7 @@ svg {
             margin-top: 5px;
             gap: 15px;
 
-            a {
+            p {
                 font-size: 72px;
             }
         }
@@ -228,7 +224,7 @@ svg {
             margin-top: -30px;
             gap: 10px;
 
-            a {
+            p {
                 font-size: 64px;
             }
         }
@@ -298,7 +294,7 @@ svg {
             justify-content: center;
             padding-left: 28px;
 
-            a {
+            p {
                 font-size: 80px;
             }
         }
@@ -339,7 +335,7 @@ svg {
 @media (max-width: 550px) {
     .menu {
         .menu-items {
-            a {
+            p {
                 font-size: 40px;
             }
         }

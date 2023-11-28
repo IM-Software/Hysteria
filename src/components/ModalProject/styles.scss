@@ -11,28 +11,6 @@
     z-index: 101;
     background-color: var(--bg-color-primary);
 
-    .modal-header {
-        display: flex;
-        z-index: 14;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        position: fixed;
-        transition-delay: 1000ms;
-
-        .mobile {
-            display: none;
-        }
-
-        div {
-            padding: 20px 62px 20px 62px;
-        }
-
-        svg {
-            cursor: pointer;
-        }
-    }
-
     h2 {
         width: 100%;
         font-size: 128px;
@@ -510,21 +488,6 @@
             font-size: 244px;
         }
 
-        .modal-header {
-            div {
-                padding: 60px 82px;
-
-                img {
-                    width: 550px;
-                }
-
-                svg {
-                    width: 70px;
-                    height: 70px;
-                }
-            }
-        }
-
         .project-modal {
             padding-top: 350px;
             height: 1500px;
@@ -639,19 +602,6 @@
             font-size: 144px;
         }
 
-        .modal-header {
-            div {
-                img {
-                    width: 250px;
-                }
-
-                svg {
-                    width: 35px;
-                    height: 35px;
-                }
-            }
-        }
-
         .project-modal {
             .project-about {
                 .text {
@@ -707,24 +657,6 @@
                             }
                         }
                     }
-                }
-            }
-        }
-    }
-}
-
-@media (max-height: 720px) {
-    .modalproject {
-        .modal-header {
-            div {
-                img {
-                    width: 150px;
-                    height: 30px;
-                }
-
-                svg {
-                    width: 20px;
-                    height: 20px;
                 }
             }
         }
@@ -795,25 +727,6 @@
 
 @media(max-width: 1000px) {
     .modalproject {
-        .modal-header {
-            .mobile {
-                width: 100%;
-                display: flex;
-            }
-
-            .pc {
-                display: none;
-            }
-
-            div {
-                img {
-                    width: 150px;
-                    height: 40px;
-                }
-
-                padding: 32px;
-            }
-        }
 
         h2 {
             width: 100%;
@@ -982,25 +895,6 @@
 
 @media(max-width: 768px) {
     .modalproject {
-        .modal-header {
-            .mobile {
-                width: 100%;
-                display: flex;
-            }
-
-            .pc {
-                display: none;
-            }
-
-            div {
-                img {
-                    width: 150px;
-                    height: 40px;
-                }
-
-                padding: 32px;
-            }
-        }
 
         h2 {
             width: 100%;
@@ -1165,39 +1059,4 @@
             }
         }
     }
-}
-
-@media(max-width: 1000px){
-    .modalproject{
-        .modal-header{
-            div{
-                img {
-                    width: 250px;
-                    height: 40px;
-                }
-                
-                svg {
-                    width: 30px;
-                    height: 30px;
-                }
-            }
-        }
-    }
-}
-
-@media(max-width: 768px){
-    .modalproject{
-        .modal-header{
-            div{
-                img{
-                    width: 150px;
-                    height: 30px;
-                }
-                svg{
-                    width: 20px;
-                    height: 20px;
-                }
-            }
-        }
-    } 
 }

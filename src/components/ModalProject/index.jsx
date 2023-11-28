@@ -23,17 +23,17 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
         }
     }
 
-    const closeModal = () => {
-        toggleModal(false)
-        showScroll((prev) => !prev)
-        setShowContent(showModal)
-    }
-
-    const closeModalVideo = () => {
-        setShowVideo(false)
-    }
-
     useEffect(() => {
+        const closeModal = () => {
+            toggleModal(false)
+            showScroll((prev) => !prev)
+            setShowContent(showModal)
+        }
+    
+        const closeModalVideo = () => {
+            setShowVideo(false)
+        }
+
         if (showModal && !showVideo) {
             changeFunctionHeader(closeModal)
         }
@@ -45,7 +45,7 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
         if (!showModal && !showVideo) {
             changeFunctionHeader(null)
         }
-    }, [showModal, showVideo])
+    }, [changeFunctionHeader, showModal, showScroll, showVideo, toggleModal])
 
     const moveUp = useSpring({
         translateY: !showModal ? '100vh' : '0vh',
