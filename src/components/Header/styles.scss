@@ -56,7 +56,7 @@ svg {
         gap: 10px;
 
         p {
-            font-size: 128px;
+            font-size: 100px;
             font-style: normal;
             font-weight: 400;
             line-height: normal;
@@ -148,7 +148,7 @@ svg {
             gap: 50px;
 
             p {
-                font-size: 240px;
+                font-size: 200px;
             }
         }
 
@@ -168,7 +168,7 @@ svg {
             gap: 10px;
 
             p {
-                font-size: 112px;
+                font-size: 100px;
             }
         }
 
@@ -193,7 +193,7 @@ svg {
 @media (max-height: 790px) {
     .menu {
         .menu-items {
-            margin-top: 5px;
+            margin-top: -20px;
             gap: 15px;
 
             p {
@@ -225,13 +225,13 @@ svg {
             gap: 10px;
 
             p {
-                font-size: 64px;
+                font-size: 54px;
             }
         }
 
         .menu-footer {
             p {
-                margin-top: -20px;
+                margin-top: -40px;
                 font-size: 24px;
             }
         }
@@ -341,7 +341,7 @@ svg {
         }
 
         .menu-footer {
-            gap: 40px;
+            gap: 50px;
 
             p {
                 font-size: 16px;

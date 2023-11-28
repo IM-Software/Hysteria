@@ -370,6 +370,13 @@
     }
 }
 
+@media(min-height: 1100px) and (max-width: 968px){
+    .contact{
+        margin-top: -2vh;
+        margin-left: 5vw;
+    }
+}
+
 @media(max-height: 570px)  and (max-width: 768px){
     .contact{
         margin-top: 13vh;

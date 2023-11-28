@@ -63,6 +63,7 @@ export const Header = ({ showScroll, data, headerFunction }) => {
                     <p onClick={() => scrollToSection('about')}>quem é hysteria</p>
                     <p onClick={() => scrollToSection('projects')}>projetos</p>
                     <p onClick={() => scrollToSection('brandlab-navigation')}>brand lab</p>
+                    <p onClick={() => scrollToSection('collaborators')}>colaboradoras</p>
                     <p onClick={() => scrollToSection('contact')}>contato</p>
                 </nav>
                 <div className="menu-footer">

@@ -175,7 +175,8 @@ export const Collaborators = ({ text }) => {
     }, [width])
 
     return (
-        <div className='collaborators' id='collaborators'>
+        <div className='collaborators'>
+            <div id="collaborators"></div>
             <div className="collaborators-container">
                 {showTitle &&
                     <div className="collaborators-title">
