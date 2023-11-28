@@ -860,10 +860,13 @@
     }
 }
 
-@media (min-height: 1110px) and (max-width: 868px){
+@media (min-height: 1000px) and (max-width: 868px){
     .collaborators{
         .collaborators-title{
             margin-top: 150px;
+            h2{
+                width: 480px;
+            }
         }
         .collaborators-text{
             margin-top: 70px;
@@ -898,7 +901,7 @@
             }
         }
         .collaborators-background  {
-            margin-top: 42vh;
+            margin-top: 40vh;
             margin-left: 38vw;
         }
     }

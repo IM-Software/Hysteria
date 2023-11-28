@@ -1,12 +1,12 @@
 .project {
     cursor: pointer;
     color: white;
-    align-items: end;
+    display: flex;
+    align-items: flex-end;
     border-radius: 50px !important;
     overflow: hidden;
     position: relative;
     opacity: 0;
-    display: flex;
     transform: translateY(300px);
     transition: 1.2s ease-out;
 
