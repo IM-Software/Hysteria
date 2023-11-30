@@ -15,7 +15,6 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
 
     const swiperRef = useRef(null)
 
-
     const changeProject = (index) => {
         setSelectedProject(index)
         if (modalRef.current) {
