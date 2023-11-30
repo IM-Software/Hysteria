@@ -29,7 +29,7 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
             showScroll((prev) => !prev)
             setShowContent(showModal)
         }
-    
+
         const closeModalVideo = () => {
             setShowVideo(false)
         }
@@ -104,22 +104,30 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
                                     <p>{projects[indexCurrent].text}</p>
                                 </div>
                                 <div className="credits">
-                                    <div className="credit createdBy">
-                                        <p>Criado por</p>
-                                        <p className='name'>{projects[indexCurrent].createdby}</p>
-                                    </div>
-                                    <div className="credit direction">
-                                        <p>Direção</p>
-                                        <p className='name'>{projects[indexCurrent].direction}</p>
-                                    </div>
-                                    <div className="credit support">
-                                        <p>Apoio</p>
-                                        <p className='name'>{projects[indexCurrent].support}</p>
-                                    </div>
-                                    <div className="credit realization">
-                                        <p>Realização</p>
-                                        <p className='name'>{projects[indexCurrent].realization}</p>
-                                    </div>
+                                    {projects[indexCurrent].createdby &&
+                                        <div className="credit createdBy">
+                                            <p>Criado por</p>
+                                            <p className='name'>{projects[indexCurrent].createdby}</p>
+                                        </div>
+                                    }
+                                    {projects[indexCurrent].direction &&
+                                        <div className="credit direction">
+                                            <p>Direção</p>
+                                            <p className='name'>{projects[indexCurrent].direction}</p>
+                                        </div>
+                                    }
+                                    {projects[indexCurrent].support &&
+                                        <div className="credit support">
+                                            <p>Apoio</p>
+                                            <p className='name'>{projects[indexCurrent].support}</p>
+                                        </div>
+                                    }
+                                    {projects[indexCurrent].realization &&
+                                        <div className="credit realization">
+                                            <p>Realização</p>
+                                            <p className='name'>{projects[indexCurrent].realization}</p>
+                                        </div>
+                                    }
                                 </div>
                             </div>
                             <div className="image">
