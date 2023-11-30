@@ -959,6 +959,7 @@
                         width: none;
 
                         .credit {
+                            align-items: center;
                             gap: 12px;
 
                             p {
@@ -1052,6 +1053,27 @@
                             }
                             p {
                                 font-size: 13px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .modalproject {
+        .project-modal {
+
+            .project-about {
+                .text {
+
+                    .credits {
+                        .credit {
+                            p {
+                                max-width: 60%;
+                                font-size: 16px;
                             }
                         }
                     }
