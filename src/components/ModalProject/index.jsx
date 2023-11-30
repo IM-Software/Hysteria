@@ -106,25 +106,25 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
                                 <div className="credits">
                                     {projects[indexCurrent].createdby &&
                                         <div className="credit createdBy">
-                                            <p>Criado por</p>
+                                            <p>{projects[indexCurrent].titleCreatedby}</p>
                                             <p className='name'>{projects[indexCurrent].createdby}</p>
                                         </div>
                                     }
                                     {projects[indexCurrent].direction &&
                                         <div className="credit direction">
-                                            <p>Direção</p>
+                                            <p>{projects[indexCurrent].titleDirection}</p>
                                             <p className='name'>{projects[indexCurrent].direction}</p>
                                         </div>
                                     }
                                     {projects[indexCurrent].support &&
                                         <div className="credit support">
-                                            <p>Apoio</p>
+                                            <p>{projects[indexCurrent].titleSupport}</p>
                                             <p className='name'>{projects[indexCurrent].support}</p>
                                         </div>
                                     }
                                     {projects[indexCurrent].realization &&
                                         <div className="credit realization">
-                                            <p>Realização</p>
+                                            <p>{projects[indexCurrent].titleRealization}</p>
                                             <p className='name'>{projects[indexCurrent].realization}</p>
                                         </div>
                                     }

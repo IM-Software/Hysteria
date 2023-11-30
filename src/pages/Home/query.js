@@ -54,9 +54,13 @@ export const HOME_QUERY = `
       url
     },
     text,
+    titleCreatedby,
     createdby,
-    realization,
+    titleRealization,
+    realization
+    titleSupport,
     support,
+    titleDirection,
     direction,
     videourl,
     videoThumb {
