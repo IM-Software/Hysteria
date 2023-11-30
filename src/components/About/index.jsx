@@ -84,7 +84,6 @@ export const About = ({ text }) => {
         }
     }, [width])
 
-
     return (
         <>
             <div id='about'></div>
