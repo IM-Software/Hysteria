@@ -9,7 +9,6 @@ export const Projects = ({ showScroll, projects, changeFunctionHeader }) => {
   const [selectedProject, setSelectedProject] = useState(0)
   const sortedProjects = [...projects].sort((a, b) => a.gridPosition - b.gridPosition)
 
-
   function organizeProjects(sortedProjects) {
     const rows = []
     let currentRow = []
@@ -50,7 +49,6 @@ export const Projects = ({ showScroll, projects, changeFunctionHeader }) => {
   }
 
   let organizedProjects = organizeProjects(sortedProjects)
-
 
   const colums = organizedProjects.map((subarray) => subarray.slice(1, subarray.length))
 
