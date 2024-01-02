@@ -38,7 +38,7 @@ export const Home = () => {
   let newData = data
 
   if ( data ) {
-    localStorage.setItem('data', data)
+    localStorage.setItem('data', JSON.stringify(data))
   }
 
 
