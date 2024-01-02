@@ -139,6 +139,7 @@
                     z-index: 0;
                     object-fit: cover;
                     object-position: center;
+                    display: none;
                 }
 
                 video{
@@ -586,6 +587,12 @@
                 margin-bottom: -111vh;
                 width: 800px;
                 height: 800px;
+
+                .video-brandlab{
+                    img{
+                        display: flex;
+                    }
+                }
 
                 .video-circle {
                     width: 1532.015px;
