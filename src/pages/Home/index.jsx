@@ -4,14 +4,12 @@ import { Projects } from '../../components/ListProjects'
 import './styles.scss'
 import { useState } from 'react'
 import { Brandlab } from '../../components/Brandlab'
-import { Collaborators } from '../../components/Collaborators'
 import { About } from '../../components/About'
 import { Contact } from '../../components/Contact'
 import { useQuery } from "graphql-hooks";
 import { HOME_QUERY } from './query'
 import Logo from '../../assets/logo-black.png'
 import SyncLoader from "react-spinners/SyncLoader"
-import Swal from 'sweetalert2'
 import { TransitionLogo } from '../../components/TransitionLogo'
 import { useWindowSize } from "@uidotdev/usehooks";
 import { Initial1920 } from '../../components/Initial/1920'
@@ -95,7 +93,6 @@ export const Home = () => {
           <Projects showScroll={showScroll} projects={newData.allProjects} changeFunctionHeader={changeFunctionHeader}/>
           <Brandlab showScroll={showScroll} text={newData.brandlab} brands={newData.allBrands} />
           <TransitionLogo id={2} data={newData.transitionTwo} />
-          <Collaborators showScroll={showScroll} text={newData.collaborator} />
           <Contact contact={newData.contact} />
         </>
       }

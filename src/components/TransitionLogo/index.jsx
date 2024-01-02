@@ -62,10 +62,10 @@ export const TransitionLogo = ({ id, data }) => {
     return (
         <div className={`transition-logo`}  id={`transition-logo-${id}`}>
             <div className="transition-background">
-                <img className='transition-img' id={`transition-img-${id}`} src={data.img.url} alt="Background" />
+                <img className='transition-img' id={`transition-img-${id}`} src={data.img} alt="Background" />
             </div>
             <div className='logo' id={`logo-${id}`}>
-                <img src={data.logo.url} alt="Logo" />
+                <img src={data.logo} alt="Logo" />
             </div>
         </div>
     )

@@ -87,7 +87,7 @@ export const Project = ({ project, toggleModal }) => {
                 {project.prevVideo &&
                     <video muted loop playsInline src={project?.prevVideo} ref={videoRef}></video>
                 }
-                <img src={project.imageMain.url} alt={`${project.name} imagem`} ref={imgDivRef} />
+                <img src={project.imageMain} alt={`${project.name} imagem`} ref={imgDivRef} />
             </div>
             <div className='text' ref={textRef}>
                 <h3>{project.name}</h3>

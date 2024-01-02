@@ -127,34 +127,40 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
                                             <p className='name'>{projects[indexCurrent].realization}</p>
                                         </div>
                                     }
+                                    {projects[indexCurrent].label5Title &&
+                                        <div className="credit label5">
+                                            <p>{projects[indexCurrent].label5Title}</p>
+                                            <p className='name'>{projects[indexCurrent].label5Description}</p>
+                                        </div>
+                                    }
                                 </div>
                             </div>
                             <div className="image">
-                                <img src={projects[indexCurrent].imageMain.url} alt={projects[indexCurrent].name} />
+                                <img src={projects[indexCurrent].imageMain} alt={projects[indexCurrent].name} />
                             </div>
                         </div>
                     </div>
                     <div className="gallery">
                         <div className="video" onClick={() => setShowVideo(true)}>
-                            <img src={projects[index].videoThumb.url} alt={`${projects[indexCurrent].name}`} />
+                            <img src={projects[index].videoThumb} alt={`${projects[indexCurrent].name}`} />
                             <div className='play'>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16"> <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" /> </svg>
                             </div>
                         </div>
                         <div className="images">
                             <div className="image">
-                                <img src={projects[indexCurrent].image1.url} alt={`${projects[indexCurrent].name}`} />
+                                <img src={projects[indexCurrent].image1} alt={`${projects[indexCurrent].name}`} />
                             </div>
                             <div className="image">
-                                <img src={projects[indexCurrent].image2.url} alt={`${projects[indexCurrent].name}`} />
+                                <img src={projects[indexCurrent].image2} alt={`${projects[indexCurrent].name}`} />
                             </div>
                         </div>
                         <div className="middle">
-                            <img src={projects[indexCurrent].imageMiddle.url} alt={`${projects[indexCurrent].name}`} />
+                            <img src={projects[indexCurrent].imageMiddle} alt={`${projects[indexCurrent].name}`} />
                         </div>
                         <div className="images">
-                            <div className="image"><img src={projects[indexCurrent].image3.url} alt={`${projects[indexCurrent].name}`} /></div>
-                            <div className="image"><img src={projects[indexCurrent].image4.url} alt={`${projects[indexCurrent].name}`} /></div>
+                            <div className="image"><img src={projects[indexCurrent].image3} alt={`${projects[indexCurrent].name}`} /></div>
+                            <div className="image"><img src={projects[indexCurrent].image4} alt={`${projects[indexCurrent].name}`} /></div>
                         </div>
                     </div>
                     <div className='footer'>
@@ -226,7 +232,7 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
                                                         }}
                                                         onMouseLeave={(e) => e.target.pause()}></video>
                                                 }
-                                                <img className='outherproject-img' src={project.imageMain.url} alt={`${project.name} img`} />
+                                                <img className='outherproject-img' src={project.imageMain} alt={`${project.name} img`} />
                                             </div>
                                             <div className="info">
                                                 <h3>{project.name}</h3>

@@ -1,10 +1,10 @@
 .contact {
     width: 100%;
-    margin-top: 5vh;
-    min-height: 100vh;
+    height: 100vh;
     position: relative;
     z-index: 42;
     color: white;
+    background-color: var(--bg-color-primary);
     display: flex;
     overflow: hidden;
 
@@ -15,6 +15,7 @@
         margin-top: 30vh;
         pointer-events: none;
     }
+
     .text {
         width: 57%;
         height: 100vh;
@@ -75,9 +76,47 @@
             }
         }
     }
+
+    .bigger-circle {
+        width: 1473px;
+        height: 1473px;
+        border: 1px solid white;
+        border-radius: 100%;
+        margin-left: -13vw;
+        margin-top: -45vh;
+        transition: transform 0.1s ease-out;
+        box-shadow: 5px 24px 15px 0px #00000046;
+        transform: translateY(-100vh) translateX(50vw);
+        position: absolute;
+        visibility: hidden;
+
+        .smaller-circle {
+            margin-top: 18%;
+            margin-left: 7.5vw;
+            width: 658px;
+            height: 658px;
+            z-index: 0;
+            border-radius: 100%;
+            border: 1px solid white;
+            box-shadow: 5px 24px 15px 0px #00000046;
+            transform: translateY(-20vh) translateX(30vw);
+
+            .background-blur {
+                display: flex;
+                opacity: 0;
+                width: 100%;
+                height: 100%;
+                margin-top: 0vh;
+                margin-left: 0vw;
+                border-radius: 100%;
+                transition: opacity 0.2s ease-in;
+                background-color: var(--bg-color-four);
+            }
+        }
+    }
 }
 
-.contact-background{
+.contact-background {
     width: 100%;
     height: 109vh;
     position: relative;
@@ -108,19 +147,21 @@
 }
 
 
-@media (min-width: 3000px){
-    .contact-background{
+@media (min-width: 3000px) {
+    .contact-background {
         margin-top: -127vh;
     }
+
     .contact {
-        margin-top: 10vh;
+
         .text {
-            margin-top: -200px;
             margin-left: 40px;
+
             div {
                 h3 {
                     font-size: 120px;
                 }
+
                 h4 {
                     font-size: 96px;
                     margin-top: 25px;
@@ -131,7 +172,7 @@
                     margin-top: 25px;
                 }
 
-                svg{
+                svg {
                     margin-top: 25px;
                     width: 150px;
                     height: 150px;
@@ -139,24 +180,38 @@
 
             }
         }
+
+        .bigger-circle {
+            width: 3000px;
+            height: 3000px;
+            margin-top: -30vh;
+
+            .smaller-circle {
+                width: 1288px;
+                height: 1288px;
+                margin-top: 15%;
+            }
+        }
+
     }
 }
 
 
 @media (min-width: 2000px) and (max-width: 3000px) {
-    .contact-background{
+    .contact-background {
         margin-top: -127vh;
         height: 130vh;
     }
+
     .contact {
-        margin-top: 20vh;
         .text {
-            margin-top: -100px;
             margin-left: 120px;
+
             div {
                 h3 {
                     font-size: 72px;
                 }
+
                 h4 {
                     font-size: 56px;
                 }
@@ -165,11 +220,23 @@
                     font-size: 40px;
                 }
 
-                svg{
+                svg {
                     width: 80px;
                     height: 80px;
                 }
 
+            }
+        }
+
+        .bigger-circle {
+            width: 2000px;
+            height: 2000px;
+            margin-top: -80vh;
+
+            .smaller-circle {
+                width: 950px;
+                height: 950px;
+                margin-top: 24%;
             }
         }
     }
@@ -180,10 +247,12 @@
         .text {
             margin-top: 20px;
             margin-left: 43px;
+
             div {
                 h3 {
-                    font-size: 54px;
+                    font-size: 50px;
                 }
+
                 h4 {
                     font-size: 40px;
                 }
@@ -197,19 +266,34 @@
     }
 }
 
-@media(max-width: 1440px){
-    .contact{
-        margin-top: 5vh;
-        .text{
+@media (max-width: 1600px) and (max-height: 1000px){
+    .contact {
+        .bigger-circle {
+            width: 1200px;
+            height: 1200px;
+
+            .smaller-circle {
+                width: 550px;
+                height: 550px;
+            }
+        }
+    }
+}
+
+@media(max-width: 1450px) {
+    .contact {
+
+        .text {
             div {
                 h3 {
                     font-size: 40px;
                 }
+
                 h4 {
                     font-size: 32px;
                 }
 
-                svg{
+                svg {
                     width: 50px;
                     height: 50px;
                 }
@@ -217,25 +301,58 @@
             }
         }
     }
-    .contact-background{
+
+
+    .contact-background {
         margin-top: -112vh;
     }
 }
 
-@media(max-width: 1370px){
-    .contact{
-        min-height: 110vh;
-        margin-top: 6vh;
-        .text{
+@media (max-width: 1450px) and (max-height: 1000px){
+    .contact {
+        .bigger-circle {
+            width: 1170px;
+            height: 1170px;
+
+            .smaller-circle {
+                width: 540px;
+                height: 540px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1450px) and (min-height: 900px){
+    .contact {
+        .bigger-circle {
+            width: 1170px;
+            height: 1170px;
+            margin-left: -20vw;
+            margin-top: -22vh;
+
+            .smaller-circle {
+                width: 535px;
+                height: 535px;
+                margin-top: 13%;
+                margin-left: 12vw;
+            }
+        }
+    }
+}
+
+@media(max-width: 1370px) {
+    .contact {
+        .text {
             div {
                 h3 {
                     font-size: 40px;
                 }
+
                 h4 {
                     font-size: 32px;
                 }
 
-                svg{
+                svg {
                     width: 50px;
                     height: 50px;
                 }
@@ -243,26 +360,41 @@
             }
         }
     }
-    .contact-background{
+
+    .contact-background {
         margin-top: -112vh;
     }
 }
 
-@media(max-width: 1290px){
-    .contact{
-        min-height: 120vh;
-        margin-top: 15vh;
-        .text{
+@media (max-width: 1370px) and (max-height: 1000px){
+    .contact {
+        .bigger-circle {
+            width: 1000px;
+            height: 1000px;
+
+            .smaller-circle {
+                width: 475px;
+                height: 475px;
+            }
+        }
+    }
+}
+
+@media(max-width: 1290px) {
+    .contact {
+        .text {
             margin-left: 23px;
+
             div {
                 h3 {
                     font-size: 40px;
                 }
+
                 h4 {
                     font-size: 32px;
                 }
 
-                svg{
+                svg {
                     width: 50px;
                     height: 50px;
                 }
@@ -270,148 +402,201 @@
             }
         }
     }
-    .contact-background{
+
+    .contact-background {
         margin-top: -125vh;
     }
 }
 
-@media (max-width: 1300px) and (min-height: 900px) {
-    .contact{
-        margin-top: -10vh;
-    }
-}
 
+@media (max-width: 1290px) and (max-height: 650px){
+    .contact {
+        .bigger-circle {
+            width: 950px;
+            height: 950px;
+            margin-top: -50vh;
 
-@media (max-width: 1150px){
-    .contact{
-        .text{
-            margin-top: -10vh;
+            .smaller-circle {
+                width: 435px;
+                height: 435px;
+                margin-left: 8vw;
+            }
         }
     }
 }
 
-@media(max-width: 1000px){
-    .contact{
+@media (max-width: 1160px){
+    .contact {
+        .bigger-circle {
+            width: 900px;
+            height: 900px;
+            margin-top: -17vh;
+
+            .smaller-circle {
+                width: 435px;
+                height: 435px;
+                margin-top: 7%;
+            }
+        }
+    }
+}
+
+
+@media(max-width: 1000px) {
+    .contact {
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 100vh;
         margin-top: 0vh;
-        .text{
-            margin-top: 43vh;
+
+        .text {
             margin-left: 0px;
+
             div {
                 display: flex;
                 margin-left: 0%;
+
                 h3 {
                     margin-top: -10px;
                     font-size: 25.214px;
                 }
+
                 h4 {
                     margin-top: 5px;
                     font-size: 15.047px;
                 }
-                p{
+
+                p {
                     margin-top: 5px;
                     font-size: 9.76px;
                 }
 
-                .social{
+                .social {
                     gap: 0px;
                     margin-top: 5px;
-                    svg{
+
+                    svg {
                         width: 26.078px;
                         height: 23.18px;
                     }
-                    #svg-two{
+
+                    #svg-two {
                         margin-left: -10px;
                     }
                 }
             }
         }
     }
-    .contact-background{
+
+    .contact-background {
         margin-top: -101vh;
     }
 }
 
-@media(max-height: 570px)  and (max-width: 768px){
-    .contact-background{
-        height: 120vh;
-    }
-}
+@media(min-height: 1000px) and (max-width: 1000px) {
+    .contact {
+        .bigger-circle {
+            width: 900px;
+            height: 900px;
+            margin-top: -17vh;
 
-@media (max-height: 800px) and (max-width: 768px){
-    .contact{
-        margin-top: 2vh;
-    }
-}
-
-@media (max-height: 750px) and (max-width: 768px){
-    .contact{
-        .text{
-            margin-left: -15%;
+            .smaller-circle {
+                width: 435px;
+                height: 435px;
+                margin-top: 7%;
+                margin-left: 6vw;
+            }
         }
     }
 }
 
-@media(max-width: 385px) and (max-height: 750px){
-    .contact{
-        margin-top: 3vh;
-    }
-}
+@media(min-height: 1200px) and (max-width: 1100px) {
+    .contact {
+        .bigger-circle {
+            width: 1000px;
+            height: 1000px;
+            margin-top: 10vh;
 
-@media(max-height: 670px)  and (max-width: 768px){
-    .contact{
-        margin-top: 1.5vh;
-        .text{
-            margin-left: -20%;
+            .smaller-circle {
+                width: 435px;
+                height: 435px;
+                margin-top: -1%;
+                margin-left: 2vw;
+            }
         }
     }
 }
 
-@media(min-height: 1100px) and (max-width: 968px){
-    .contact{
-        margin-top: -2vh;
-        margin-left: 5vw;
-    }
-}
 
-@media(max-height: 570px)  and (max-width: 768px){
-    .contact{
-        margin-top: 13vh;
-        .text{
+@media(max-height: 970px) and (max-width: 768px) {
+    .contact {
+
+        .text {
             margin-left: -20%;
-            margin-top: 35%;
+
             div {
                 margin-top: 5px;
                 display: flex;
                 margin-left: 0%;
+
                 h3 {
                     margin-top: -10px;
                     font-size: 15px;
                 }
+
                 h4 {
                     margin-top: 5px;
                     font-size: 12px;
                 }
-                p{
+
+                p {
                     margin-top: 5px;
                     font-size: 7px;
                 }
 
-                .social{
+                .social {
                     gap: 0px;
                     margin-top: 5px;
-                    svg{
+
+                    svg {
                         width: 26.078px;
                         height: 23.18px;
                     }
-                    #svg-two{
+
+                    #svg-two {
                         margin-left: -10px;
                     }
                 }
 
+            }
+        }
+
+        .bigger-circle {
+            width: 600px;
+            height: 600px;
+            margin-top: -10vh;
+    
+            .smaller-circle {
+                width: 290px;
+                height: 290px;
+                margin-top: 2%;
+            }
+        }
+    }
+}
+
+
+@media(max-height: 750px) and (max-width: 550px) {
+    .contact {
+        .bigger-circle {
+            width: 500px;
+            height: 500px;
+            margin-top: 5vh;
+    
+            .smaller-circle {
+                width: 200px;
+                height: 200px;
+                margin-top: -1%;
             }
         }
     }

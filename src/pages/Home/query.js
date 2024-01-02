@@ -1,18 +1,15 @@
 export const HOME_QUERY = `
 {
   headerImg{
-    logoPc{
-      url
-    },
-    logoMobile{
-      url
-    }
+    logoPc,
+    logoMobile
   },
   initial{
     videoUrl,
     textUp,
     textMiddle,
-    textLow
+    textLow,
+    videoBackground
   },
   about {
     text,
@@ -22,25 +19,15 @@ export const HOME_QUERY = `
   },
   allBrands {
     name,
-    logo{
-      url
-    }
+    logo
   },
   transitionOne {
-    img{
-      url
-    },
-    logo{
-      url
-    }
+    img,
+    logo
   },
   transitionTwo {
-    img{
-      url
-    },
-    logo{
-      url
-    }
+    img,
+    logo
   },
   allProjects {
     name,
@@ -50,9 +37,7 @@ export const HOME_QUERY = `
     height,
     gridPosition,
     prevVideo,
-    imageMain {
-      url
-    },
+    imageMain,
     text,
     titleCreatedby,
     createdby,
@@ -62,36 +47,21 @@ export const HOME_QUERY = `
     support,
     titleDirection,
     direction,
+    label5Title,
+    label5Description,
     videourl,
-    videoThumb {
-      url
-    },
-    image1 {
-      url
-    },
-    image2 {
-      url
-    },
-    imageMiddle {
-      url
-    },
-    image3 {
-      url
-    },
-    image4 {
-      url
-    }
+    videoThumb,
+    image1,
+    image2
+    imageMiddle,
+    image3,
+    image4,
   },
   brandlab{
     text,
     textSecondary,
-    videoUrl
-  },
-  collaborator {
-    text
-    videoTop,
-    videoLow,
-    videoLeft
+    videoUrl,
+    videoBackground
   },
   contact{
   	email,

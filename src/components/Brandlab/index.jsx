@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './styles.scss'
 import { gsap } from 'gsap'
 import { useWindowSize } from "@uidotdev/usehooks"
@@ -11,13 +11,14 @@ export const Brandlab = ({ text, brands }) => {
   const [showBrands, setShowBrands] = useState(false)
   const [indexCurrent, setIndexCurrent] = useState(-1)
 
+  const videoRef = useRef(null)
+
   const { width } = useWindowSize()
 
   const playVideo = () => {
-    const videos = document.querySelectorAll('.video-brandlab')
-    videos.forEach((video) => {
-      video.play()
-    })
+    if (videoRef.current) {
+      videoRef.current.play()
+    }
   }
 
   useEffect(() => {
@@ -120,7 +121,7 @@ export const Brandlab = ({ text, brands }) => {
             <div className={`brands ${showBrands ? 'show' : ''}`}>
               {brands.map((brand, index) => (
                 <div className={`brand ${indexCurrent >= index ? 'show' : ''}`} key={index}>
-                  <img src={brand.logo.url} alt={`${brand.name} logo`} />
+                  <img src={brand.logo} alt={`${brand.name} logo`} />
                 </div>
               ))}
             </div>
@@ -130,7 +131,10 @@ export const Brandlab = ({ text, brands }) => {
             <div className="brandlab-video">
               <div className='video-circle'></div>
               <div className="video-circle-bottom"></div>
-              <video className='video-brandlab' muted loop playsInline src={text.videoUrl}></video>
+              <div className='video-brandlab'>
+                <img src={text.videoBackground} alt="" />
+                <video ref={videoRef} muted loop playsInline src={text.videoUrl}></video>
+              </div>
             </div>
           }
         </div>

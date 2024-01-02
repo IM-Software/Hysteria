@@ -27,7 +27,7 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
     const playAllVideos = () => {
         videoRefs.forEach((ref) => {
             if (ref.current) {
-              ref.current.play()
+                ref.current.play()
             }
         })
     }
@@ -206,6 +206,7 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
                         transform: showAnimationStart ? `scale(${scale})` : 'scale(1)',
                     }}>
                         <div className="circle" >
+                            <img className='image-background' src={data.videoBackground} alt="" />
                             <video ref={videoRefs[2]} playsInline muted loop src={data.videoUrl} className='video video-initial'></video>
                         </div>
                     </div>
@@ -217,10 +218,16 @@ export const Initial768 = ({ showAnimationStart, setShowAnimationStart, showScro
                         <animated.div className="background-ball" style={{ ...background, borderRadius: showAnimationStart ? borderRadius : '0%', }}>
                             <animated.div className='videos-container' >
                                 <animated.div className="video-left" style={leftSlide}>
-                                    <video ref={videoRefs[0]} playsInline muted loop src={data.videoUrl} className='video video-initial'></video>
+                                    <div className='background'>
+                                        <img className='image-background' src={data.videoBackground} alt="" />
+                                        <video ref={videoRefs[0]} playsInline muted loop src={data.videoUrl} className='video video-initial'></video>
+                                    </div>
                                 </animated.div>
                                 <animated.div className="video-right" style={rightSlide}>
-                                    <video ref={videoRefs[1]} playsInline muted loop src={data.videoUrl} className='video video-initial'></video>
+                                    <div className='background'>
+                                        <img className='image-background' src={data.videoBackground} alt="" />
+                                        <video ref={videoRefs[1]} playsInline muted loop src={data.videoUrl} className='video video-initial'></video>
+                                    </div>
                                 </animated.div>
                             </animated.div>
                         </animated.div>

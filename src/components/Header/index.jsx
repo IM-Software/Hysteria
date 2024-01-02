@@ -73,8 +73,8 @@ export const Header = ({ showScroll, data, headerFunction }) => {
             </header>
             <header className='header'>
                 <div>
-                    <img href='#home' className='pc' src={data.logoPc.url} alt="logo" />
-                    <img href='#home' className='mobile' src={data.logoMobile.url} alt="logo" />
+                    <img href='#home' className='pc' src={data.logoPc} alt="logo" />
+                    <img href='#home' className='mobile' src={data.logoMobile} alt="logo" />
                 </div>
                 <div>
                     {!iconClose ? (
