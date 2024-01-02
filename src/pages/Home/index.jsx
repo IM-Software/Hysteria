@@ -35,15 +35,15 @@ export const Home = () => {
     setHeaderFunction(() => functionHeader)
   }
 
-  if (error) {
-    Swal.fire({
-      icon: 'error',
-      title: 'Erro',
-      text: 'Não foi possível buscar as informações. Tente novamente mais tarde.',
-      showConfirmButton: false,
-      allowOutsideClick: false,
-      customClass: 'modal'
-    })
+  let newData = data
+
+  if ( data ) {
+    localStorage.setItem('data', data)
+  }
+
+
+  if (error ) {
+    newData = localStorage.getItem('data')
   }
 
   const showScroll = (value) => {
@@ -66,14 +66,14 @@ export const Home = () => {
 
 
   const SIZES_RES = {
-    'mobile': <Initial768 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data?.initial} setShowHeader={setShowHeader} />,
-    1280: <Initial1280 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data?.initial} setShowHeader={setShowHeader} />,
-    1366: <Initial1366 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data?.initial} setShowHeader={setShowHeader} />,
-    1440: <Initial1440 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data?.initial} setShowHeader={setShowHeader} />,
-    1600: <Initial1600 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data?.initial} setShowHeader={setShowHeader} />,
-    1920: <Initial1920 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data?.initial} setShowHeader={setShowHeader} />,
-    2560: <Initial2560 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data?.initial} setShowHeader={setShowHeader} />,
-    3840: <Initial3840 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={data?.initial} setShowHeader={setShowHeader} />,
+    'mobile': <Initial768 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={newData?.initial} setShowHeader={setShowHeader} />,
+    1280: <Initial1280 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={newData?.initial} setShowHeader={setShowHeader} />,
+    1366: <Initial1366 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={newData?.initial} setShowHeader={setShowHeader} />,
+    1440: <Initial1440 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={newData?.initial} setShowHeader={setShowHeader} />,
+    1600: <Initial1600 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={newData?.initial} setShowHeader={setShowHeader} />,
+    1920: <Initial1920 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={newData?.initial} setShowHeader={setShowHeader} />,
+    2560: <Initial2560 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={newData?.initial} setShowHeader={setShowHeader} />,
+    3840: <Initial3840 showAnimationStart={showAnimationStart} setShowAnimationStart={setShowAnimationStart}  showScroll={showScroll} data={newData?.initial} setShowHeader={setShowHeader} />,
   }
 
   return (
@@ -87,16 +87,16 @@ export const Home = () => {
       {!loading && !error &&
         <>
           {showHeader &&
-            <Header showScroll={showScroll} data={data.headerImg} headerFunction={headerFunction}/>
+            <Header showScroll={showScroll} data={newData.headerImg} headerFunction={headerFunction}/>
           }
           {SIZES_RES[newWidth]}
-          <About text={data.about} />
-          <TransitionLogo id={1} data={data.transitionOne} />
-          <Projects showScroll={showScroll} projects={data.allProjects} changeFunctionHeader={changeFunctionHeader}/>
-          <Brandlab showScroll={showScroll} text={data.brandlab} brands={data.allBrands} />
-          <TransitionLogo id={2} data={data.transitionTwo} />
-          <Collaborators showScroll={showScroll} text={data.collaborator} />
-          <Contact contact={data.contact} />
+          <About text={newData.about} />
+          <TransitionLogo id={1} data={newData.transitionOne} />
+          <Projects showScroll={showScroll} projects={newData.allProjects} changeFunctionHeader={changeFunctionHeader}/>
+          <Brandlab showScroll={showScroll} text={newData.brandlab} brands={newData.allBrands} />
+          <TransitionLogo id={2} data={newData.transitionTwo} />
+          <Collaborators showScroll={showScroll} text={newData.collaborator} />
+          <Contact contact={newData.contact} />
         </>
       }
     </div>
