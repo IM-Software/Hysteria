@@ -97,23 +97,22 @@ export const Initial2560 = ({ showAnimationStart, setShowAnimationStart, showScr
         },
     })
 
-    useEffect(() =>{
-        gsap.to('.start', {
-            zIndex: '40',
-            ease: 'power1.easeInOut',
-            scrollTrigger: {
-                trigger: '#transition-img-1',
-                start: "center center",
-                end: "center center",
-                scrub: 1,
-            },
-        })
-    })
-
     useEffect(() => {
         if (showCircles) {
             playAllVideos()
             gsap.to('.video-right', {
+                y: '-50vh',
+                ease: 'power1.easeInOut',
+                scrollTrigger: {
+                    trigger: '.start',
+                    start: "bottom bottom",
+                    endTrigger: '#about',
+                    end: 'top top',
+                    scrub: 1,
+                },
+            })
+
+            gsap.to('.image-background', {
                 y: '-50vh',
                 ease: 'power1.easeInOut',
                 scrollTrigger: {
@@ -325,6 +324,7 @@ export const Initial2560 = ({ showAnimationStart, setShowAnimationStart, showScr
                         transform: showAnimationStart ? `scale(${scale})` : 'scale(1)',
                     }}>
                         <div className="circle" >
+                            <img className='image-background' src={data.videoBackground} alt="" />
                             <video playsInline muted loop src={data.videoUrl} className='video video-initial'></video>
                         </div>
                     </div>
@@ -336,9 +336,11 @@ export const Initial2560 = ({ showAnimationStart, setShowAnimationStart, showScr
                     <animated.div className="background-ball" style={{ ...background, borderRadius: showAnimationStart ? borderRadius : '0%', }}>
                             <animated.div className='videos-container' >
                                 <animated.div className="video-left" style={leftSlide}>
+                                    <img className='image-background' src={data.videoBackground} alt="" />
                                     <video muted loop src={data.videoUrl} className='video video-initial'></video>
                                 </animated.div>
                                 <animated.div className="video-right" style={rightSlide}>
+                                    <img className='image-background' src={data.videoBackground} alt="" />
                                     <video muted loop src={data.videoUrl} className='video video-initial'></video>
                                 </animated.div>
                             </animated.div>

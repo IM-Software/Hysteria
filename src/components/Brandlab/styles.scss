@@ -6,7 +6,7 @@
     justify-content: center;
     position: relative;
     top: 0;
-    z-index: 20;
+    z-index: 9;
     align-items: center;
     padding-top: 200px;
 
@@ -139,7 +139,6 @@
                     z-index: 0;
                     object-fit: cover;
                     object-position: center;
-                    display: none;
                 }
 
                 video{
@@ -587,12 +586,6 @@
                 margin-bottom: -111vh;
                 width: 800px;
                 height: 800px;
-
-                .video-brandlab{
-                    img{
-                        display: flex;
-                    }
-                }
 
                 .video-circle {
                     width: 1532.015px;
