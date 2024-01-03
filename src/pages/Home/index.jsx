@@ -34,6 +34,7 @@ export const Home = () => {
   }
 
   let newData = data
+  let errorTotal = false
 
   if ( data ) {
     localStorage.setItem('data', JSON.stringify(data))
@@ -41,7 +42,13 @@ export const Home = () => {
 
 
   if (error ) {
-    newData = localStorage.getItem('data')
+    let dataStorage = localStorage.getItem('data')
+    if(dataStorage){
+      newData = JSON.parse(dataStorage)
+      console.log(newData)
+    }else{
+      errorTotal = true
+    }
   }
 
   const showScroll = (value) => {
@@ -82,7 +89,7 @@ export const Home = () => {
           <SyncLoader className='spinner' color={'var(--color-loading)'} />
         </div>
       }
-      {!loading && !error &&
+      {!loading && !errorTotal &&
         <>
           {showHeader &&
             <Header showScroll={showScroll} data={newData.headerImg} headerFunction={headerFunction}/>
