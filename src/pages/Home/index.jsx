@@ -17,7 +17,6 @@ import { Initial2560 } from '../../components/Initial/2560'
 import { Initial3840 } from '../../components/Initial/3840'
 import { Initial1440 } from '../../components/Initial/1440'
 import { Initial768 } from '../../components/Initial/768'
-
 import axios from 'axios'
 
 export const Home = () => {
