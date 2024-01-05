@@ -44,7 +44,8 @@ export const Header = ({ showScroll, data, headerFunction }) => {
             } else {
                 section.scrollIntoView()
                 setDisableAnchors(false)
-                toggleMenu()
+                setShowMenu(false)
+                showScroll(true)
             }
         }
     }
@@ -63,7 +64,6 @@ export const Header = ({ showScroll, data, headerFunction }) => {
                     <p onClick={() => scrollToSection('about')}>quem é hysteria</p>
                     <p onClick={() => scrollToSection('projects')}>projetos</p>
                     <p onClick={() => scrollToSection('brandlab-navigation')}>brand lab</p>
-                    <p onClick={() => scrollToSection('collaborators')}>colaboradoras</p>
                     <p onClick={() => scrollToSection('contact')}>contato</p>
                 </nav>
                 <div className="menu-footer">
@@ -72,7 +72,7 @@ export const Header = ({ showScroll, data, headerFunction }) => {
                 </div>
             </header>
             <header className='header'>
-                <div>
+                <div onClick={() => scrollToSection('home')}>
                     <img href='#home' className='pc' src={data.logoPc} alt="logo" />
                     <img href='#home' className='mobile' src={data.logoMobile} alt="logo" />
                 </div>

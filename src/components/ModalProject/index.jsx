@@ -16,10 +16,14 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
     const swiperRef = useRef(null)
 
     const changeProject = (index) => {
-        setSelectedProject(index)
-        if (modalRef.current) {
-            modalRef.current.scrollTop = 0
-        }
+        toggleModal(false)
+        setTimeout(function() {
+            toggleModal(true)
+            if (modalRef.current) {
+                modalRef.current.scrollTop = 0
+            }    
+            setSelectedProject(index)
+        }, 1500)
     }
 
     const closeModal = () => {
