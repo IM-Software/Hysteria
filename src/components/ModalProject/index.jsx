@@ -28,7 +28,7 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
 
     const closeModal = () => {
         toggleModal(false)
-        showScroll((prev) => !prev)
+        showScroll(true)
         setShowContent(showModal)
     }
 
@@ -38,6 +38,7 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
 
     useEffect(() => {
         if (showModal && !showVideo) {
+            showScroll(false)
             changeFunctionHeader(closeModal)
         }
 
@@ -237,6 +238,7 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
                                                         onMouseLeave={(e) => e.target.pause()}></video>
                                                 }
                                                 <img className='outherproject-img' src={project.imageMain} alt={`${project.name} img`} />
+                                                <div className="project-shadow"></div>
                                             </div>
                                             <div className="info">
                                                 <h3>{project.name}</h3>
