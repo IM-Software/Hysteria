@@ -67,8 +67,8 @@ export const Header = ({ showScroll, data, headerFunction }) => {
                     <p onClick={() => scrollToSection('contact')}>contato</p>
                 </nav>
                 <div className="menu-footer">
-                    <a href={data.linkTerms} target='_bank'><p>política de privacidade</p></a>
-                    <a href={data.poweredLink} target='_bank'><p>powered by Conspiração</p></a>
+                    <a href={data.linkTerms} target='_blank'><p>política de privacidade</p></a>
+                    <a href={data.poweredLink} target='_blank'><p>powered by Conspiração</p></a>
                 </div>
             </header>
             <header className='header'>
