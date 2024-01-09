@@ -585,8 +585,8 @@
 
 @media(max-height: 450px)  and (max-width: 768px){
     .about{
-        height: 150vh;
         .about-text{
+            margin-top: 70%;
             .about-title {
                 h3{
                     font-size: 40px;
