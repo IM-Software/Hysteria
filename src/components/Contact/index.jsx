@@ -59,8 +59,8 @@ export const Contact = ({ contact }) => {
                     <h2 className='titles contact-title'>contato</h2>
                     <div>
                         <h3>{contact.email}</h3>
-                        <h4>Política de privacidade</h4>
-                        <p>Powered by Conspiração</p>
+                        <a href={contact.linkTerms} target='_blank'><h4>Política de privacidade</h4></a>
+                        <a href={contact.poweredLink} target='_blank'><p>Powered by Conspiração</p></a>
                         <div className="social">
                             <a href={contact.youtubeLink} target='_blank' rel="noreferrer">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="65" height="57" viewBox="0 0 65 57" fill="none">

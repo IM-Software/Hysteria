@@ -81,6 +81,14 @@ svg {
         align-items: center;
         justify-content: space-between;
 
+        a{
+            text-decoration: none;
+        }
+
+        a:visited{
+            text-decoration: none;
+        }
+
         p {
             padding: 40px 62px;
             color: white;
