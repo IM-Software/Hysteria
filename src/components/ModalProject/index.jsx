@@ -12,10 +12,12 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
 
     const [currentIndexSlider, setCurrentIndexSlider] = useState(0)
 
-    let maxSlide = projects.length / 2
+    let maxSlide = 10 / 2
 
-    if (projects.length % 2 !== 0) {
+    if (10 % 2 !== 0) {
         maxSlide = Math.ceil(maxSlide)
+    }else{
+        maxSlide = maxSlide + 1
     }
 
     const swiperRef = useRef(null)
