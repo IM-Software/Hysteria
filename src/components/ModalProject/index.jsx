@@ -10,8 +10,13 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
     const [showContent, setShowContent] = useState(false)
     const [showVideo, setShowVideo] = useState(false)
 
-    const [currentIndex, setCurrentIndex] = useState(0)
-    const maxSlide = (projects.length / 2) - 1
+    const [currentIndexSlider, setCurrentIndexSlider] = useState(0)
+
+    let maxSlide = projects.length / 2
+
+    if (projects.length % 2 !== 0) {
+        maxSlide = Math.ceil(maxSlide)
+    }
 
     const swiperRef = useRef(null)
 
@@ -63,29 +68,30 @@ export const ModalProject = ({ index = 0, setSelectedProject, showModal, toggleM
 
     useEffect(() => {
         const transitionStyles = {
-            transform: `translateX(-${currentIndex * 74.4}%)`,
+            transform: `translateX(-${currentIndexSlider * 74.4}%)`,
             transition: 'transform 0.5s ease-out',
         }
         if (swiperRef.current) {
             Object.assign(swiperRef.current.style, transitionStyles)
         }
-    }, [currentIndex])
+    }, [currentIndexSlider])
 
     const prevProjects = () => {
-        if (currentIndex > 0) {
-            setCurrentIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length)
+        if (currentIndexSlider > 0) {
+            setCurrentIndexSlider((prevIndex) => (prevIndex - 1 + projects.length) % projects.length)
         }
     }
 
     const nextProjects = () => {
-        if (currentIndex < maxSlide) {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length)
+        if (currentIndexSlider < maxSlide) {
+            setCurrentIndexSlider((prevIndex) => (prevIndex + 1) % projects.length)
         }
     }
 
 
     useEffect(() => {
         setIndexCurrent(index)
+        setCurrentIndexSlider(0)
     }, [index])
 
     return (
