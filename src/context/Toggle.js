@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useFeatureIsOn } from '@growthbook/growthbook-react';
+import { Construction } from '../pages/Construction';
 
 export default function ToggleProvider({ children }) {
   const [isFeatureReady, setIsFeatureReady] = useState(false);
@@ -21,6 +22,6 @@ export default function ToggleProvider({ children }) {
   if (isPreview) {
     return children;
   } else {
-    return <div>Site em construção</div>;
+    return <Construction/>;
   }
 }
