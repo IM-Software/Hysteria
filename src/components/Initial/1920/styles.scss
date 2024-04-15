@@ -134,6 +134,7 @@
         width: 100%;
         height: 100px;
         overflow: hidden;
+        transition: transform 0.3s ease-out;
     }
 
     .text-container-two {
@@ -145,6 +146,7 @@
         height: 100px;
         overflow: hidden;
         margin-top: -40px;
+        transition: transform 0.3s ease-out;
     }
 
     .text-container-center {
@@ -155,6 +157,7 @@
         width: 100%;
         height: 288px;
         overflow: hidden;
+        transition: transform 0.3s ease-out;
     }
 
     .text {
@@ -173,14 +176,14 @@
             font-style: normal;
             line-height: 412px;
             transition: transform 0.7s ease-out;
-            animation: fade-in 1.5s ease-in;
+            animation: fade-in 1.5s ease-in forwards;
         }
 
         h2 {
             font-size: 96px;
             font-weight: 300;
             line-height: 96px;
-            animation: fade-in 1.5s ease-in;
+            animation: fade-in 1.5s ease-in forwards;
         }
         .text-one{
             transition: transform 0.5s ease-out;

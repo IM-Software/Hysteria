@@ -100,6 +100,52 @@ export const Initial2560 = ({ showAnimationStart, setShowAnimationStart, showScr
     useEffect(() => {
         if (showCircles) {
             playAllVideos()
+
+            gsap.to('.text-container-one', {
+                opacity: 0,
+                scrollTrigger: {
+                    trigger: '.start',
+                    start: "center center",
+                    endTrigger: '.about',
+                    end: 'top top',
+                    scrub: 1,
+                },
+            })
+
+            gsap.to('.text-container-center', {
+                opacity: 0,
+                scrollTrigger: {
+                    trigger: '.text-container-center',
+                    start: "top top",
+                    endTrigger: '.about',
+                    end: 'top top',
+                    scrub: 1,
+                },
+            })
+
+            gsap.to('.text-container-two', {
+                opacity: 0,
+                scrollTrigger: {
+                    trigger: '.circle-bottom-2560',
+                    start: "center center",
+                    endTrigger: '.about',
+                    end: 'top top',
+                    scrub: 1,
+                },
+            })
+
+            gsap.to('.video-left', {
+                y: '-50vh',
+                ease: 'power1.easeInOut',
+                scrollTrigger: {
+                    trigger: '.start',
+                    start: "bottom bottom",
+                    endTrigger: '#about',
+                    end: 'top top',
+                    scrub: 1,
+                },
+            })
+
             gsap.to('.video-right', {
                 y: '-50vh',
                 ease: 'power1.easeInOut',

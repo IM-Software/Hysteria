@@ -136,6 +136,7 @@
         width: 100%;
         height: 100px;
         overflow: hidden;
+        transition: transform 0.3s ease-out;
     }
 
     .text-container-two {
@@ -147,6 +148,7 @@
         height: 100px;
         overflow: hidden;
         margin-top: -40px;
+        transition: transform 0.3s ease-out;
     }
 
     .text-container-center {
@@ -157,6 +159,7 @@
         width: 100%;
         height: 288px;
         overflow: hidden;
+        transition: transform 0.3s ease-out;
     }
 
     .text {
