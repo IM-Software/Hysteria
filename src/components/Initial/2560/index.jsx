@@ -101,32 +101,10 @@ export const Initial2560 = ({ showAnimationStart, setShowAnimationStart, showScr
         if (showCircles) {
             playAllVideos()
 
-            gsap.to('.text-container-one', {
+            gsap.to('.text', {
                 opacity: 0,
                 scrollTrigger: {
                     trigger: '.start',
-                    start: "center center",
-                    endTrigger: '.about',
-                    end: 'top top',
-                    scrub: 1,
-                },
-            })
-
-            gsap.to('.text-container-center', {
-                opacity: 0,
-                scrollTrigger: {
-                    trigger: '.text-container-center',
-                    start: "top top",
-                    endTrigger: '.about',
-                    end: 'top top',
-                    scrub: 1,
-                },
-            })
-
-            gsap.to('.text-container-two', {
-                opacity: 0,
-                scrollTrigger: {
-                    trigger: '.circle-bottom-2560',
                     start: "center center",
                     endTrigger: '.about',
                     end: 'top top',
