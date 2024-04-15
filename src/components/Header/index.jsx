@@ -72,7 +72,9 @@ export const Header = ({ showScroll, data, headerFunction }) => {
                 </div>
             </header>
             <header className='header'>
-                <div onClick={headerFunction ? headerFunction : () =>{scrollToSection('home')}}>
+                <div 
+                style={{opacity: headerFunction ? '0' : '1', transition: '0.5s ease-out', pointerEvents: headerFunction ? 'none' : 'all'}} 
+                onClick={() => scrollToSection('home')}>
                     <img href='#home' className='pc' src={data.logoPc} alt="logo" />
                     <img href='#home' className='mobile' src={data.logoMobile} alt="logo" />
                 </div>
